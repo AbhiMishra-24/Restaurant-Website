@@ -1,18 +1,25 @@
+import dotenv from "dotenv";
+dotenv.config( {path: "./config.env "});
+
 import express from "express";
-import _ from "lodash";
-import { connectMongoose, User } from "./database.js";
+import connectMongoose from "./database.js";
+import { User } from "./userSchema.js";
+import { router } from "./routes.js";
+
 import LocalStrategy from "passport-local";
 import passport from "passport";
 import session from "express-session";
-import { isAuthenticated, isLoginAuthenticated } from "./isAuthenticated.js";
+import cookieParser from "cookie-parser";
+import _ from "lodash";
 
 const app = express();
-const port = 4000;
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
+app.use(router);
 
 app.use(session({
     secret: "Abhishek",
@@ -52,50 +59,50 @@ passport.deserializeUser(async (id, done) => {
     }
 })
 
-app.get("/", isLoginAuthenticated, (req, res) => {
-    res.render("index");
-});
-app.get("/joinus", (req, res) => {
-    ; res.render("joinus");
-})
-app.get("/login", isLoginAuthenticated, (req, res) => {
-    res.render("login");
-});
-app.get("/signup", isLoginAuthenticated, (req, res) => {
-    res.render("signup");
-});
+// app.get("/", isLoginAuthenticated, (req, res) => {
+//     res.render("index");
+// });
+// app.get("/joinus", (req, res) => {
+//     ; res.render("joinus");
+// })
+// app.get("/login", isLoginAuthenticated, (req, res) => {
+//     res.render("login");
+// });
+// app.get("/signup", isLoginAuthenticated, (req, res) => {
+//     res.render("signup");
+// });
 
-app.get("/home", isAuthenticated, (req, res) => {
-    res.render("home");
-})
+// app.get("/home", isAuthenticated, (req, res) => {
+//     res.render("home");
+// })
 
-app.post("/signup", async (req, res) => {
-    const userExists = await User.findOne({ username: req.body.username });
+// app.post("/signup", async (req, res) => {
+//     const userExists = await User.findOne({ username: req.body.username });
 
-    if (userExists) return res.status(400).render("signup", { content: "User already exists !" });
+//     if (userExists) return res.status(400).render("signup", { content: "User already exists !" });
 
-    const newUser = new User({
-        name: req.body.name,
-        username: req.body.username,
-        mobileNumber: _.toNumber(req.body.mobileNumber),
-        password: req.body.password
-    });
+//     const newUser = new User({
+//         name: req.body.name,
+//         username: req.body.username,
+//         mobileNumber: _.toNumber(req.body.mobileNumber),
+//         password: req.body.password
+//     });
 
-    await newUser.save().then(console.log("Successfully registered !"));
+//     await newUser.save().then(console.log("Successfully registered !"));
 
-    res.redirect("/home");
-})
+//     res.redirect("/home");
+// })
 
-app.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
-    res.redirect("/home");
-});
+// app.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
+//     res.redirect("/home");
+// });
 
-app.post("/logout", (req, res) => {
-    req.logOut(() => {
-        res.redirect("/login");
-    });
-})
+// app.post("/logout", (req, res) => {
+//     req.logOut(() => {
+//         res.redirect("/login");
+//     });
+// })
 
-app.listen(process.env.PORT || port, (req, res) => {
-    console.log(`Listening on the port ${port}.`);
+app.listen(process.env.PORT, (req, res) => {
+    console.log(`Listening on the port ${process.env.PORT}.`);
 });

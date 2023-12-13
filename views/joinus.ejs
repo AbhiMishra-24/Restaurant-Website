@@ -11,95 +11,65 @@
 <body>
     <header>
         <div id="name">
-            <h2>the <span> garden </span> of eat'n</h2>
+            <h3>the <span> garden </span> of eat'n</h3>
         </div>
         <div id="navbar">
             <ul>
                 <li><a href="/">home</a></li>
-                <li><a href="/aboutus">about us</a></li>
-                <li><a href="#">book a table</a></li>
-                <li><a href="/contactus">contact us</a></li>
-                <!-- <li><a href="#">join us</a></li> -->
+                <li><a href="/#aboutus">about us</a></li>
+                <li><a href="/">book a table</a></li>
+                <li><a href="/#contactus">contact us</a></li>
+                <li><a href="/joinus">join us</a></li>
                 <li><a href="/login">login</a></li>
                 <li><a href="/signup">sign up</a></li>
             </ul>
         </div>
     </header>
 
-    <section class="chef">
-        <div>Chef</div>
+    <section class="joinus">
         <div>
-            <div>
-                <p>find a geat opportunity in your chef career</p>
-                <p>join us and explore the world of food making</p>
-                <form action="/">
+            <div class="left">
+                <p>join now</p>
+
+                <form action="/joinus" method="post">
+                    <input type="text" name="name" placeholder="Your Name" autocomplete="off">
+
+                    <input type="text" name="mobileNumber" placeholder="Mobile Number" autocomplete="off">
+
+                    <input type="email" name="email" placeholder="Email ID" autocomplete="off">
+
                     <div>
-                        <label for="myname">Name:</label>
+                        <span>Gender: </span>
+                        
+                        <label for="male">Male 
+                            <input type="radio" id="male" name="gender" value="male">
+                        </label>
+                        <label for="female">Female 
+                            <input type="radio" id="female" name="gender" value="male">
+                        </label>
+                        <label for="other">Other 
+                            <input type="radio" id="other" name="gender" value="male">
+                        </label>
                     </div>
+
                     <div>
-                        <input type="text" placeholder="Name" id="myname">
+                        <span>Apply for the role: </span>
+
+                        <select name="role">
+                            <option value="chef">Chef</option>
+                            <option value="delivery boy">Delivery Boy</option>
+                        </select>
                     </div>
-                    <div>
-                        <label for="mobile">Mobile Number:</label>
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Mobile Number" id="mobile">
-                    </div>
-                    <div>
-                        <p>Gender:</p>
-                        <label for="male1">Male <input type="radio" id="male1" value="male" placeholder="Male"
-                                name="gender"></label>
-                        <label for="female1">Female <input type="radio" id="female1" value="female"
-                                name="gender"></label>
-                        <label for="other1">Other <input type="radio" id="other1" value="other" name="gender"></label>
-                    </div>
-                    <button type="submit">Submit</button>
+
+                    <button>Submit</button>
+
                 </form>
-            </div>
-            <div class="img1">
-                <img src="../BackgroundImages/men-chef-1514505_1920.png" alt="">
             </div>
         </div>
-    </section>
-
-    <section class="delivery">
-        <div>delivery boy</div>
         <div>
-            <div>
-                <p>find a geat opportunity in your chef career</p>
-                <p>join us and explore the world of food making</p>
-                <form action="index.html">
-                    <div>
-                        <label for="myname">Name:</label>
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Name" id="myname">
-                    </div>
-                    <div>
-                        <label for="mobile">Mobile Number:</label>
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Mobile Number" id="mobile">
-                    </div>
-                    <div>
-                        <p>Gender:</p>
-                        <label for="male2">Male <input type="radio" id="male2" value="male" placeholder="Male"
-                                name="gender"></label>
-                        <label for="female2">Female <input type="radio" id="female2" value="female"
-                                name="gender"></label>
-                        <label for="other2">Other <input type="radio" id="other2" value="other" name="gender"></label>
-                    </div>
-                    <div>
-                        <p>Age Group:</p>
-                        <label for="group1">18-30 <input type="radio" id="group1" name="agegroup"></label>
-                        <label for="group2">30-40 <input type="radio" id="group2" name="agegroup"></label>
-                        <label for="group3">40-50 <input type="radio" id="group3" name="agegroup"></label>
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-            <div class="img2">
-                <img src="../BackgroundImages/movers-24402_1920.png" alt="">
+            <div class="right">
+                <p>Embrace the sizzle in our kitchen or hit the streets with speedy finesse! &ThickSpace; Join us and make every meal an unforgettable experience.</p>
+                <p>Apply now!</p>
             </div>
         </div>
     </section>

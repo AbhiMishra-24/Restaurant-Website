@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Dancing+Script:wght@700&family=Great+Vibes&family=Oswald:wght@200&family=Sedgwick+Ave+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Oswald:wght@300&family=Roboto+Slab:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Berkshire+Swash&family=Montserrat:wght@100;400;500;600;700;800;900&family=Roboto:wght@400;500&display=swap');
 
 
 ::-webkit-scrollbar{
-    width: 10px;
+    width: 15px;
 }
 
 ::-webkit-scrollbar-track{
@@ -12,15 +12,13 @@
 
 ::-webkit-scrollbar-thumb{
     border-radius: 10px;
-    background: linear-gradient(indigo, blue, green, yellow, orange, red);
-    background: linear-gradient( transparent,transparent, skyblue,transparent,transparent);
-    border: 1px solid skyblue;  
+    background: grey;
+    border: 3px solid black;
+    background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover{
-    background: linear-gradient(indigo 50%, blue 50%, green 50%, yellow 50%, orange 50%, red 50%);
-    background: linear-gradient( transparent, skyblue,transparent);
-    border: 1px solid skyblue;
+    background: #eee;
 }
 
 
@@ -39,7 +37,7 @@ html {
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Montserrat', sans-serif;
 }
 a{
     color: black;
@@ -47,7 +45,7 @@ a{
 
 body::after{
     content: "";
-    background: url(../BackgroundImages/salad-2068220_1920.jpg) no-repeat center center/cover;
+    background: url(../BackgroundImages/bgimage\ \(2\).jpg) no-repeat center center/cover;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -62,16 +60,15 @@ body::after{
 header{
     /* border: 2px solid red; */
     width: 100%;
-    height: 5rem;
+    height: 4rem;
     display: grid;
-    grid-template-columns: 1.2fr 2fr;
-    position: fixed;
+    grid-template-columns: 400px auto;
     align-items: center;
-    /* justify-content: space-between; */
+    position: fixed;
     padding: 0 0.5rem;
     top: 0;
     background-color: rgba(0, 0, 0, 1);
-    z-index: 3
+    z-index: 3;
 }
 
 #name{
@@ -79,14 +76,15 @@ header{
     /* width: calc(100% - 2rem); */
     font-size: 1.5rem;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items:last baseline ;
     padding: 0.5rem;
     position: relative;
     z-index: 2;
 }
 
-#name h2{
+#name h3{
+    margin-left: 3rem;
     outline-width: 2px;
     outline-color: black;
     position: relative;
@@ -97,9 +95,10 @@ header{
     pointer-events: none;
 }
 
-#name h2 span{
+#name h3 span{
     position: relative;
     background: linear-gradient(90deg, yellow, rgb(11, 226, 11), yellow, rgb(11, 226, 11));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'Berkshire Swash', cursive;
@@ -108,13 +107,7 @@ header{
 #navbar{
     /* border: 1px solid white; */
     background-color: black;
-    border-radius: 16px;
-    /* position: fixed; */
-    top: 1rem;
-    /* right: 1rem; */
-    width: 52rem;
     z-index: 3;
-    /* padding-left: 3rem; */
 }
 
 #navbar ul{
@@ -129,237 +122,145 @@ header{
     justify-content: center;
     align-items: center;
     margin: 0.5rem;
+    border-radius: 10px;
 }
 
 #navbar a{
     /* border: 1px solid green; */
     text-transform: uppercase;
     color: white;
-    font-size: 14px;
+    font-size: 13px;
     padding: 0.5rem 1rem;
+    border-radius: 10px;
 }
 
 #navbar a:hover{
-    transform: scale(1.1);
+    background-color: #1f1f1f;
 }
 
 #navbar li:last-child{
-    width: 6rem;
-    background-color: skyblue;
-    border-radius: 10px;
+    background: linear-gradient(to right, rgb(135, 200, 235), rgb(135, 175, 235), rgb(135, 150, 235));
 }
 
 #navbar li:last-child a{
     color: black;
-    transform: scale(1);
-    font-size: 16px;
+    font-weight: 600;
 }
 
 #navbar li:last-child:hover a{
-    text-decoration: underline;
+    background: linear-gradient(to left, rgb(135, 200, 235), rgb(135, 175, 235), rgb(135, 150, 235));
 }
-
 
 /* FORM SECTION */
 
+section{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .container{
-    margin-top: 7rem;
-    /* background-color: green; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-}
-
-.form{
-    display: block;
-    width: 100%;
-    max-width: 40rem;
-    /* height: 30rem; */
-    text-align: center;
-    justify-content: center;
-    background-color: white;
-    padding: 3rem;
-    /* border-radius: 1rem; */
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
-}
-
-.form h1{
-    display: block;
+    /* border: 1px solid black; */
+    margin: auto;
+    width: 60%;
     position: relative;
-    background-color: black;
-    color: white;
-    /* border: 2px solid purple; */
-    margin-bottom: 1rem;
-    padding: 0.5rem 0rem;
-    justify-content: center;
-    border-radius: 5px;
-}
-
-
-.input{
-    /* border: 2px solid green; */
-    background: linear-gradient(45deg, rgb(135, 200, 235), rgb(135, 175, 235), rgb(135, 150, 235));    
-    padding: 3rem;
-    border-radius: 20px;    
-    /* box-shadow: 0px 0px 20px 0px rgb(250, 0, 0); */
-}
-
-.input-field{
-    /* border: 2px solid greenyellow; */
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* display: flex; */
-    margin: 1.5rem 0;
-    /* border-radiu*/
-}
-
-input{
-    border: 1px solid black;
-    position: relative;
-    width: 100%;
-    background: white; 
-    border: none;
-    outline: transparent;
-    padding: 1rem 0rem;
-    font-family: 'Roboto Slab', serif;
-    /* margin: 2rem; */
-}
-
-.input-field p{
-    position: relative;
-}
-
-.input-field img{
-    margin: 1rem;
-}
-
-
-#name img{
-    width: 1.5rem;
-    height: 1rem;
-}
-#email img{
-    width: 1.25rem;
-    height: 0.75rem;
-}
-#phone img{
-    width: 1.1rem;
-    height: 1.1rem;
-    margin: 0rem 1rem 0.1rem 1.1rem;
-}
-#password img{
-    margin: 0rem 1.2rem 0.1rem 1.2rem;
-    width: 0.9rem;
-    height: 1.1rem;
-}
-
-.toggle{
-    margin-top: 0.85rem;
-    display: flex;
-    align-items: center;
-    /* justify-content: space-around; */
-    border: 1px solid black;
-    font-family: 'Roboto Slab', serif;
-}
-
-.toggle div{
-    /* border-radius: 30px; */
-    width: 14rem;
-    background-color: black;
-}
-
-.btn{
-    display: flex;
-    border-radius: 0rem;
-    margin: 0px;
-    border-right: 1px solid white;
-}
-.btn button{
-    /* width: 13rem; */
-    background-color: transparent;
-    color: white;
-    font-family: 'Roboto Slab', serif;
-    font-size: 14px;
-    padding: 0.5rem 2rem;
-    border: none;
-    cursor: pointer;
-    order: 2;
-}
-
-
-#submit{
-    background-color: white;
-    color: black;
-    font-size: 16px;
-    font-family: 'Roboto Slab', serif;
+    top: 1.5rem;
+    display: grid;
+    grid-template-columns: 55% auto;
+    border-radius: 10px;
     overflow: hidden;
-    cursor: pointer ;
-    margin: 1rem 0rem;
-    padding: 0.9rem;
-    order: 1;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-#signup{
-    padding: 0.5rem 0rem;
-    background-color: black;
-    cursor: pointer;
+.container>div{
+    /* border: 1px solid black; */
+    padding: 3rem;
+}
+
+.container form{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-#signup a{
-    padding: 0rem 5rem;
-    color: white;
-    font-family: 'Roboto Slab', serif;
+.container form>p{
+    font-size: 32px;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.container form>input{
+    padding: 0.6rem 1rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid grey;
+    font-size: 15px;
+}
+
+.container form>div>p{
+    color: red;
     font-size: 14px;
-    /* font-weight: bold; */
+    font-weight: 500;
+    text-align: center;
 }
 
-
-
-/* TOGGLE CSS */
-
-.remove{
-    display: none;
+.container form>button{
+    padding: 0.6rem 1rem;
+    border: 1px solid orange;
+    border-radius: 8px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 1rem;
+    color: orange;
+    cursor: pointer;
+    background-color: rgb(255, 145, 0);
+    color: white;
 }
 
-.add{
+.container form>button:hover{
+    background-color: white;
+    color: rgb(255, 140, 0);
+}
+
+/* RIGHT PART  */
+
+.container>div:last-child{
+    background: url(../BackgroundImages/coffee-meet\ \(1\).jpg) no-repeat center;
+    background-size: cover;
     display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 3rem 2rem;
 }
-
-/* FORM HOVER EFFECTS */
-
-#submit:hover{
-    background-color: black;
+.right>p{
+    text-align: center;
     color: white;
-    /* box-shadow: 0px 0px 10px 0px rgb(34, 151, 21); */
-    /* transform: scaleX(1.1); */
-    transition: all 0.3s;
+    margin-bottom: 1rem;
 }
-
-#signup:hover a{
+.right>p>a{
+    color: white;
     text-decoration: underline;
-    color: white;
 }
-
 
 /* FOOTER STYLING */
 
 footer{
     position: relative;
-    background-color: black;
+    /* background-color: #000; */
+    background-color: rgba(0, 0, 0, 0.4);
     color: white;
     text-align: center;
     justify-content: center;
-    margin-top: 3.6rem;
-    padding: 0.5rem;
-    font-size: 15px;
+    padding: 0.6rem;
+    font-size: 14px;
 }
 
 footer span{
     color: white;
-    font-size: 15px;
+    font-size: 14px;
 }
