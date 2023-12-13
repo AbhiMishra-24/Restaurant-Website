@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Dancing+Script:wght@700&family=Great+Vibes&family=Oswald:wght@200&family=Sedgwick+Ave+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Oswald:wght@300&family=Roboto+Slab:wght@300&display=swap');
+
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: black;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: linear-gradient(indigo, blue, green, yellow, orange, red);
+    background: linear-gradient( transparent,transparent, skyblue,transparent,transparent);
+    border: 1px solid skyblue;  
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(indigo 50%, blue 50%, green 50%, yellow 50%, orange 50%, red 50%);
+    background: linear-gradient( transparent, skyblue,transparent);
+    border: 1px solid skyblue;
+}
+
+
+body,
+html {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    /* height: 100vh; */
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto Slab', serif;
+}
+a{
+    color: black;
+}
+
+body::after{
+    content: "";
+    background: url(../BackgroundImages/dish-7158169_960_720.jpg) no-repeat center center/cover;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* HEADER STYLING */
+
+header{
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 5rem;
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    position: fixed;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 0 0.5rem;
+    top: 0;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 3
+}
+
+#name{
+    /* border: 1px solid white; */
+    /* width: calc(100% - 2rem); */
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items:last baseline ;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+#name h2{
+    outline-width: 2px;
+    outline-color: black;
+    position: relative;
+    text-align: center;
+    -webkit-text-fill-color: white;
+    text-transform: capitalize;
+    font-family: 'Berkshire Swash', cursive;
+    pointer-events: none;
+}
+
+#name h2 span{
+    position: relative;
+    background: linear-gradient(90deg, yellow, rgb(11, 226, 11), yellow, rgb(11, 226, 11));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Berkshire Swash', cursive;
+}
+
+#navbar{
+    /* border: 1px solid white; */
+    background-color: black;
+    border-radius: 16px;
+    /* position: fixed; */
+    top: 1rem;
+    /* right: 1rem; */
+    width: 52rem;
+    z-index: 3;
+    /* padding-left: 3rem; */
+}
+
+#navbar ul{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#navbar li{
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+#navbar a{
+    /* border: 1px solid green; */
+    text-transform: uppercase;
+    color: white;
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+}
+
+#navbar a:hover{
+    transform: scale(1.1);
+}
+
+#navbar li:last-child{
+    width: 6rem;
+    background-color: skyblue;
+    border-radius: 10px;
+}
+
+#navbar li:last-child a{
+    color: black;
+    transform: scale(1);
+    font-size: 16px;
+}
+
+#navbar li:last-child:hover a{
+    text-decoration: underline;
+}
+
+/* CHEF SECTION */
+
+.chef{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 2rem;
+    align-items: center;
+    position: relative;
+    top: 6rem;
+    padding: 1rem;
+    border-bottom: 2px solid #e7e7e7;
+    margin: 1rem;
+}
+
+.chef>div:first-child{
+    height: 6rem;
+    background: linear-gradient(to right, rgb(255, 200, 0), rgb(255, 175, 0), rgb(255, 150, 0));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 3rem;
+    /* font-weight: bold; */
+    text-transform: uppercase;
+}
+
+.chef>div:last-child{
+    display: flex;
+    /* margin: 1rem; */
+    /* border: 1px solid black; */
+    justify-content: center;
+    position: relative;
+    width: calc(100% - margin);
+    /* height: 60vh;     */
+    background: linear-gradient(to right, rgb(255, 200, 0), rgb(255, 175, 0), rgb(255, 150, 0));
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.chef div>div>p{
+    text-transform: capitalize;
+    margin: 0.5rem;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 25px;
+    text-justify: inter-word;
+}
+
+form{
+    position: absolute;
+    /* border: 1px solid black; */
+    background-color: #eeeeee;
+    width: 30rem;
+    border-radius: 10px;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
+}
+
+form label{
+    margin: 0.5rem 0;
+}
+
+#myname, #mobile{
+    width: 15rem;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: none;
+    outline: transparent;
+}
+
+form button{
+    width: 15rem;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: none;
+    outline: transparent;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.chef .img1 img{
+    position: relative;
+    margin-left: 4rem;
+    right: 0;
+    height: calc(60vh - 2rem);
+}
+
+/* DELIVERY SECTION */
+
+.delivery{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 2rem;
+    align-items: center;
+    position: relative;
+    top: 6rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.delivery>div:first-child{
+    height: 6rem;
+    background: linear-gradient(to right, rgb(255, 200, 0), rgb(255, 175, 0), rgb(255, 150, 0));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 2rem;
+    /* font-weight: bold; */
+    text-transform: uppercase;
+}
+
+.delivery>div:last-child{
+    display: flex;
+    /* margin: 1rem; */
+    /* border: 1px solid black; */
+    justify-content: center;
+    position: relative;
+    width: calc(100% - margin);
+    height: 70vh;
+    background: linear-gradient(to right, rgb(255, 200, 0), rgb(255, 175, 0), rgb(255, 150, 0));
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.delivery div>div>p{
+    text-transform: capitalize;
+    margin: 0.5rem;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 25px;
+    text-justify: inter-word;
+}
+
+.delivery form p{
+    margin-top: 0.5rem;
+}
+
+.delivery .img2{
+    display: flex;
+    align-items: center;
+}
+
+.delivery .img2 img{
+    margin-left: 4rem;
+    position: relative;
+    height: calc(60vh - 2rem);
+}
+
+/* FOOTER STYLING */
+
+footer{
+    position: relative;
+    background-color: black;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    margin-top: 7rem;
+    padding: 0.5rem;
+    font-size: 15px;
+}
+
+footer span{
+    color: white;
+    font-size: 15px;
+}

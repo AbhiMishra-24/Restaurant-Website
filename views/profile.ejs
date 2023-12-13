@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= user.name %></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 5rem 10rem;
+            background-color: #eee;
+            gap: 2rem;
+        }
+        .container>div{
+            /* border: 1px solid black; */
+        }
+        .container>div>input{
+            width: 20rem;
+            padding: 0.5rem;
+            margin-left: 10px;
+            outline: transparent;
+            border: none;
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="name">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Name" value="<%= user.name %>">
+        </div>
+        <div class="email">
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Email" value="<%= user.email %>">
+        </div>
+    </div>
+</body>
+
+</html>

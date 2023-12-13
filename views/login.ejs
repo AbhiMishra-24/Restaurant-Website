@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/login.css">
+    <title>Thegardenofeat'n.com | Login</title>
+</head>
+<body>
+    <header>
+        <div id="name">
+            <h2>the <span> garden </span> of eat'n</h2>
+        </div>
+        <div id="navbar">
+            <ul>
+                <li><a href="/">home</a></li>
+                <li><a href="/aboutus">about us</a></li>
+                <li><a href="#">book a table</a></li>
+                <li><a href="/contactus">contact us</a></li>
+                <li><a href="/joinus">join us</a></li>
+                <!-- <li><a href="login.html">login</a></li> -->
+                <li><a href="/signup">sign up</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="form">
+                <form action="/login" method="post">
+                    <div class="input">
+                        <h1 id="title">LOGIN</h1>
+
+
+                        <div class="input-field" id="email">
+                            <img src="../Icons/envelope-icon.png" alt="" srcset="">
+                            <input type="email" placeholder="Email" name="username">
+                        </div>
+
+
+                        <!-- <div class="input-field remove" id="phone">
+                            <img src="../Icons/phone-icon.png" alt="">
+                            <input type="text" placeholder="Mobile Number" name="myMobileNumber">
+                        </div> -->
+
+
+                        <div class="input-field" id="password">
+                            <img src="../Icons/lock-icon.png" alt="">
+                            <input type="password" placeholder="Password" required="required" name="password">
+                        </div>
+
+                        <div>
+                            <% if (locals.content) { %>
+                            <p><%= content %></p>
+                            <%}%>
+                        </div>
+                        
+                        <div>
+                            <input id ="submit" type="submit" name="submitButton" value = "login" required>
+                        </div>
+
+
+                        <div class="toggle">
+                            <div id="login-phone" class="input-field btn">
+                                <button>Use mobile instead</button>
+                            </div>
+                            <div id="login-email" class="input-field btn remove">
+                                <button>Use email instead</button>
+                            </div>
+                            <div id="signup">
+                                <a href="/signup">Sign Up</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Copyright &copy <span id="foot"></span> Thegardenofeat'n.com All Rights Reserved
+    </footer>
+
+    <script src="../JS/login.js"></script>
+</body>
+</html>
