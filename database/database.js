@@ -5,7 +5,10 @@ import mongoose from "mongoose";
 
 async function connectMongoose() {
     const response = await mongoose
-    .connect(process.env.DATABASE);
+    .connect(process.env.DATABASE, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
 
     console.log(`Connected to mongoDB Atlas on ${response.connection.host}`);
 }
