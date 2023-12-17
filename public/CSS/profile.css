@@ -246,7 +246,7 @@ header>div:first-child{
     width: calc(100vw - 330px);
     height: 100vh;
     background-color: black;
-    background: url(BackgroundImages/bgimage\ \(2\).jpg) no-repeat center center/cover;
+    background: url(/BackgroundImages/bgimage\ \(2\).jpg) no-repeat center center/cover;
     overflow-y: scroll;
     overflow-x: hidden;
     padding: 3rem 0;

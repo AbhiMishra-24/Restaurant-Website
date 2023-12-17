@@ -45,7 +45,7 @@ a{
 
 body::after{
     content: "";
-    background: url(BackgroundImages/bgimage\ \(2\).jpg) no-repeat center center/cover;
+    background: url(/BackgroundImages/bgimage\ \(2\).jpg) no-repeat center center/cover;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -250,7 +250,7 @@ section{
 /* RIGHT PART  */
 
 .container>div:last-child{
-    background: url(BackgroundImages/coffee-meet\ \(1\).jpg) no-repeat center;
+    background: url(/BackgroundImages/coffee-meet\ \(1\).jpg) no-repeat center;
     background-size: cover;
     display: flex;
     flex-direction: column;

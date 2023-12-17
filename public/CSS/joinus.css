@@ -45,7 +45,7 @@ a{
 
 body::after{
     content: "";
-    background: url(BackgroundImages/dish-7158169_960_720.jpg) no-repeat center center/cover;
+    background: url(/BackgroundImages/dish-7158169_960_720.jpg) no-repeat center center/cover;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -175,7 +175,7 @@ header{
 .joinus>div:last-child>div{
     width: 100%;
     height: 100%;
-    background: url(BackgroundImages/cycle-4536914_1920.png) no-repeat center;
+    background: url(/BackgroundImages/cycle-4536914_1920.png) no-repeat center;
     background-size: cover;
 }
 
