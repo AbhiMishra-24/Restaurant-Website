@@ -1,0 +1,314 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Berkshire+Swash&family=Montserrat:wght@100;400;500;600;700;800;900&family=Roboto:wght@400;500&display=swap');
+
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-track{
+    background: black;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: grey;
+    border: 3px solid black;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #eee;
+}
+
+
+body,
+html {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    /* height: 100vh; */
+    scroll-behavior: smooth;
+    /* background-color: #FFECD6; */
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    color: black;
+}
+
+body::after{
+    content: "";
+    background: url(/BackgroundImages/bgimage2.jpg) no-repeat center center/cover;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* HEADER STYLING */
+
+header{
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 4rem;
+    display: grid;
+    grid-template-columns: 400px auto;
+    position: fixed;
+    align-items: center;
+    padding: 0 0.5rem;
+    top: 0;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 3
+}
+
+#name{
+    /* border: 1px solid white; */
+    /* width: calc(100% - 2rem); */
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: left;
+    align-items:last baseline ;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+#name h3{
+    margin-left: 3rem;
+    outline-width: 2px;
+    outline-color: black;
+    position: relative;
+    text-align: center;
+    -webkit-text-fill-color: white;
+    text-transform: capitalize;
+    font-family: 'Berkshire Swash', cursive;
+    pointer-events: none;
+}
+
+#name h3 span{
+    position: relative;
+    background: linear-gradient(90deg, yellow, rgb(11, 226, 11), yellow, rgb(11, 226, 11));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Berkshire Swash', cursive;
+}
+
+#navbar{
+    /* border: 1px solid white; */
+    background-color: black;
+    z-index: 3;
+}
+
+#navbar ul{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#navbar li{
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    border-radius: 10px;
+}
+
+#navbar a, #navbar button{
+    /* border: 1px solid green; */
+    text-transform: uppercase;
+    color: white;
+    font-size: 13px;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+#navbar a:hover, #navbar li.cart:hover{
+    background-color: #1f1f1f;
+    cursor: pointer;
+}
+
+#navbar li.signup{
+    background: linear-gradient(to right, rgb(135, 200, 235), rgb(135, 175, 235), rgb(135, 150, 235));
+}
+
+#navbar li.signup a{
+    color: black;
+    font-weight: 600;
+    transform: scale(1);
+}
+
+#navbar li.signup:hover a{
+    background: linear-gradient(to left, rgb(135, 200, 235), rgb(135, 175, 235), rgb(135, 150, 235));
+}
+
+
+/* PROFILE DROPDOWN STYLING */
+
+li.dropdown{
+    position: relative;
+}
+
+#navbar li.cart{
+    /* border: 1px solid white; */
+    color: white;
+    width: 3rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+li.cart a i{
+    font-size: 16px;
+    position: relative;
+    top: 1px;
+    right: 1px;
+    color: white;
+}
+
+li.dropdown figure{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 10xp;
+}
+
+li.dropdown img{
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;  
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background-color: white;
+    cursor: pointer;
+}
+
+li.dropdown div.dropdown-content{
+    /* border: 1px solid white; */
+    background-color: black;
+    position: absolute;
+    top: 3.5rem;
+    right: -0.5rem;
+    width: calc(max-content + 2rem);
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    border-radius: 15px;
+    box-shadow: 0 0 8px 0 black;
+}
+li.dropdown div.dropdown-content.display-none{
+    display: none;
+}
+
+li.dropdown .dropdown-content a, li.dropdown form{
+    width: 100%;
+    color: white;
+    cursor: pointer;
+}
+
+#navbar li.dropdown form button{
+    width: 100%;
+    background: #fff;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+
+/* ABOUT US  */
+
+.aboutus{
+    /* border: 1px solid black; */
+    width: 80%;
+    min-height: 30rem;
+    margin: auto;
+    margin-top: 7.5rem;
+    display: grid;
+    grid-template-columns: 35% auto;
+}
+
+
+/* LEFT SECTION  */
+
+.left {
+    background: url(/BackgroundImages/coffee-meet-2.jpg) no-repeat center center/cover;
+    background-color: black;
+}
+
+
+/* RIGHT SECTION  */
+
+.right{
+    background-color: white;
+    padding: 2.5rem;
+}
+
+.right h3{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.right p{
+    margin-bottom: 1rem;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.display-none{
+    display: none;
+}
+
+.right button{
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    background-color: grey;
+    color: white;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+
+/* FOOTER STYLING */
+
+footer{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    justify-content: center;
+    margin-top: 3.5rem;
+    padding: 0.5rem;
+    font-size: 15px;
+}
+
+footer span{
+    color: white;
+    font-size: 14px;
+}

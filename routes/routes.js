@@ -7,10 +7,6 @@ import bcrypt from "bcryptjs";
 import { upload } from "../file upload/multer.middleware.js";
 import { uploadOnCloudinary } from "../file upload/cloudinary.js";
 
-// import multer from "multer";
-
-// const upload = multer({dest: ""});
-
 const router = Router();
 
 router.get("/", (req, res) => {
@@ -21,10 +17,45 @@ router.get("/", (req, res) => {
     }
 });
 
-router.route("/joinus")
-    .get((req, res) => {
-        res.render("joinus");
+router.route("/about-us")
+    .get( async (req, res) => {
+
+        let user = null;
+        if (req.cookies.user) {
+            user = await User.findOne({_id: req.cookies.user});
+        }
+
+        res.render("aboutus", {user});
+    })
+
+router.route("/join-us")
+    .get( async (req, res) => {
+
+        let user = null;
+        if (req.cookies.user) {
+            user = await User.findOne({_id: req.cookies.user});
+        }
+
+        res.render("joinus", {user});
     });
+
+
+router.route("/book-table")
+    .get( async (req, res) => {
+
+        let user = null;
+
+        if (req.cookies.user) {
+            user = await User.findOne({_id: req.cookies.user});
+        }
+           
+        res.render("booking", { user });
+
+    })
+
+    .post(async (req, res) => {
+        
+    })
 
 
 router.route("/signup")

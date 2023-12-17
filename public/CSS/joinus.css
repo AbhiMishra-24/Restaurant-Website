@@ -45,7 +45,7 @@ a{
 
 body::after{
     content: "";
-    background: url(/BackgroundImages/dish-7158169_960_720.jpg) no-repeat center center/cover;
+    background: url(/BackgroundImages/bgimage8.jpg) no-repeat center center/cover;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -125,32 +125,119 @@ header{
     border-radius: 10px;
 }
 
-#navbar a{
+#navbar a, button{
     /* border: 1px solid green; */
     text-transform: uppercase;
     color: white;
     font-size: 13px;
     padding: 0.5rem 1rem;
     border-radius: 10px;
+    border: none;
+    outline: none;
 }
 
-#navbar a:hover{
+#navbar a:hover, #navbar li.cart:hover{
     background-color: #1f1f1f;
+    cursor: pointer;
 }
 
-#navbar li:last-child{
+#navbar li.signup{
     background: linear-gradient(to right, rgb(135, 200, 235), rgb(135, 175, 235), rgb(135, 150, 235));
 }
 
-#navbar li:last-child a{
+#navbar li.signup a{
     color: black;
     font-weight: 600;
     transform: scale(1);
 }
 
-#navbar li:last-child:hover a{
+#navbar li.signup:hover a{
     background: linear-gradient(to left, rgb(135, 200, 235), rgb(135, 175, 235), rgb(135, 150, 235));
 }
+
+
+/* PROFILE DROPDOWN STYLING */
+
+li.dropdown{
+    position: relative;
+}
+
+#navbar li.cart{
+    /* border: 1px solid white; */
+    color: white;
+    width: 3rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    margin-right: 1rem;
+}
+li.cart a i{
+    font-size: 16px;
+    position: relative;
+    top: 1px;
+    right: 1px;
+    color: white;
+}
+
+li.dropdown figure{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 10xp;
+}
+
+li.dropdown img{
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;  
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background-color: white;
+    cursor: pointer;
+}
+
+li.dropdown div.dropdown-content{
+    /* border: 1px solid white; */
+    background-color: black;
+    position: absolute;
+    top: 3.5rem;
+    right: -0.5rem;
+    width: calc(max-content + 2rem);
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    border-radius: 15px;
+    box-shadow: 0 0 8px 0 black;
+}
+li.dropdown div.dropdown-content.display-none{
+    display: none;
+}
+
+li.dropdown .dropdown-content a, li.dropdown form{
+    width: 100%;
+    color: white;
+    cursor: pointer;
+}
+
+li.dropdown form button{
+    width: 100%;
+    background: #fff;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+
 
 /* CHEF SECTION */
 
@@ -161,7 +248,7 @@ header{
     margin-top: 7.5rem;
     display: grid;
     grid-template-columns: 50% auto;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     overflow: hidden;
     background-color: white;
 }
@@ -236,7 +323,7 @@ header{
 }
 .left>form>button{
     padding: 0.6rem 1rem;
-    border: 1px solid orange;
+    border: 1px solid black;
     border-radius: 8px;
     font-size: 15px;
     text-transform: uppercase;
@@ -244,12 +331,13 @@ header{
     margin-top: 1rem;
     color: orange;
     cursor: pointer;
-    background-color: rgb(255, 145, 0);
+    background-color: black;
     color: white;
+    transition: 0.3s all ease;
 }
 .left>form>button:hover{
     background-color: white;
-    color: rgb(255, 140, 0);
+    color: black;
 }
 
 /* RIGHT PART  */
