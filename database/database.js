@@ -3,11 +3,11 @@ dotenv.config({ path: "./config.env" });
 
 import mongoose from "mongoose";
 
-function connectMongoose() {
-    mongoose
-    .connect(process.env.DATABASE)
-    .then((e) => console.log(`Connected to mongoDB: ${e.connection.host}`))
-    .catch(e => console.log(e));
+async function connectMongoose() {
+    const response = await mongoose
+    .connect(process.env.DATABASE);
+
+    console.log(`Connected to mongoDB Atlas on ${response.connection.host}`);
 }
 
 export {connectMongoose};

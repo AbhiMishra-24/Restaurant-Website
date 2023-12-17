@@ -22,7 +22,12 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(router);
 
-connectMongoose();
+// await connectMongoose();
+async function connectToMongoose() {
+    await connectMongoose();
+}
+
+connectToMongoose();
 
 app.listen(process.env.PORT, (req, res) => {
     console.log(`Listening on the port ${process.env.PORT}.`);
