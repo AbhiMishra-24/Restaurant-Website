@@ -3,6 +3,9 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 const userSchema = new mongoose.Schema({
+    profileImg: {
+        type: String
+    },
     name: {
         type: String,
         required: true
@@ -20,13 +23,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    tokens: [
-        {
-            token: {
-                type: String
-            }
-        }
-    ]
+    gender: {
+        type: String
+    },
+    DOB: {
+        type: String
+
+    }
 });
 
 // Hashing the password.

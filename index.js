@@ -2,15 +2,10 @@ import dotenv from "dotenv";
 dotenv.config( {path: "./config.env "});
 
 import express from "express";
-import connectMongoose from "./database.js";
-import { User } from "./userSchema.js";
-import { router } from "./routes.js";
+import connectMongoose from "./database/database.js";
+import { router } from "./routes/routes.js";
 
-import LocalStrategy from "passport-local";
-import passport from "passport";
-import session from "express-session";
 import cookieParser from "cookie-parser";
-import _ from "lodash";
 
 const app = express();
 
@@ -21,87 +16,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(router);
 
-app.use(session({
-    secret: "Abhishek",
-    resave: false,
-    saveUninitialized: false
-}));
-
-app.use(passport.initialize());
-app.use(passport.session());
-
 connectMongoose();
-
-passport.use("local", new LocalStrategy.Strategy(async (username, password, done) => {
-    try {
-        const user = await User.findOne({ username: username });
-
-        if (!user) return done(null, false);
-        if (user.password != password) return done(null, false);
-
-        return done(null, user);
-
-    } catch (error) {
-        return done(error, false);
-    }
-}));
-
-passport.serializeUser((user, done) => {
-    done(null, user.id);
-})
-
-passport.deserializeUser(async (id, done) => {
-    try {
-        const user = await User.findById(id);
-        done(null, user);
-    } catch (error) {
-        done(error, false);
-    }
-})
-
-// app.get("/", isLoginAuthenticated, (req, res) => {
-//     res.render("index");
-// });
-// app.get("/joinus", (req, res) => {
-//     ; res.render("joinus");
-// })
-// app.get("/login", isLoginAuthenticated, (req, res) => {
-//     res.render("login");
-// });
-// app.get("/signup", isLoginAuthenticated, (req, res) => {
-//     res.render("signup");
-// });
-
-// app.get("/home", isAuthenticated, (req, res) => {
-//     res.render("home");
-// })
-
-// app.post("/signup", async (req, res) => {
-//     const userExists = await User.findOne({ username: req.body.username });
-
-//     if (userExists) return res.status(400).render("signup", { content: "User already exists !" });
-
-//     const newUser = new User({
-//         name: req.body.name,
-//         username: req.body.username,
-//         mobileNumber: _.toNumber(req.body.mobileNumber),
-//         password: req.body.password
-//     });
-
-//     await newUser.save().then(console.log("Successfully registered !"));
-
-//     res.redirect("/home");
-// })
-
-// app.post("/login", passport.authenticate("local", { failureRedirect: "/login" }), (req, res) => {
-//     res.redirect("/home");
-// });
-
-// app.post("/logout", (req, res) => {
-//     req.logOut(() => {
-//         res.redirect("/login");
-//     });
-// })
 
 app.listen(process.env.PORT, (req, res) => {
     console.log(`Listening on the port ${process.env.PORT}.`);

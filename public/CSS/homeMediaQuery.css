@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Berkshire+Swash&family=Montserrat:wght@100;400;500;600;700;800;900&family=Roboto:wght@400;500&family=Bebas+Neue&family=Luckiest+Guy&display=swap');
+
+
+
+@media (max-width: 1000px) {
+    /* SIDEBAR LINKS SECTION  */
+    .sidebarLinks>p:first-child{
+        padding: 1rem 1rem 0.7rem;
+        font-size: 12px;
+        gap: 0.5rem;
+    }
+    .sidebarLinks>p:first-child>i{
+        font-size: 16px;
+    }
+    .sidebarLinks>ul{
+        gap: 0.5rem;
+        padding: 0.5rem 0.5rem 1rem 1rem;
+    }
+    .sidebarLinks a, .sidebarLinks button{
+        font-size: 12px;
+        padding: 0.6rem 0.5rem 0.6rem 1rem;
+        gap: 0.5rem;
+    }
+    .sidebarLinks a, .sidebarLinks button i{
+        font-size: 11px;
+    }
+    .profile, .logout{
+        margin-top: 0.5rem;
+    }
+
+    /* COPYRIGHT */
+    .copyright{
+        margin: 0.5rem 0;
+    }
+    .copyright>p{
+        padding-left: 5px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 900px) {
+    header{
+        height: 3.5rem;
+    }
+
+    /* HAMBURGER ICON  */
+    .hamburger-icon > div{
+        width: 2.3rem;
+        height: 2.1rem;
+    }
+
+    /* RESTAURANT NAME  */
+    #name h3{
+        font-size: 1.3rem;
+    }
+    #name h3 span{
+        font-size: 1.3rem;
+    }
+
+    /* SEARCH SECTION STYLING */
+    .search label{
+        border-radius: 8px;
+    }
+    .search input{
+        width: 18rem;
+        height: 1.8rem;
+    }
+    .search label>div{
+        width: 2.5rem;
+        height: 1.8rem;
+        font-size: 14px;
+    }
+    .search .search-dropdown {
+        width: 18rem;
+        max-height: 17rem;
+    }
+
+    /* BOTTOM SECTION  */
+
+    #bottom-section {
+        margin-top: 3rem;
+}
+
+    /* SIDEBAR LINKS SECTION  */
+    .sidebarLinks>p:first-child{
+        padding: 1rem 0.6rem 0.7rem;
+        font-size: 11px;
+        gap: 0.5rem;
+    }
+    .sidebarLinks>p:first-child>i{
+        font-size: 13px;
+    }
+
+    /* COPYRIGHT */
+    .copyright{
+        margin: 0.5rem 0;
+    }
+    .copyright>p{
+        font-size: 11px;
+        padding-left: 5px;
+    }
+}
