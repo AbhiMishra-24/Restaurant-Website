@@ -15,7 +15,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 app.use(express.static("public"));
-// app.use('/CSS', express.static(__dirname + 'public/CSS'));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

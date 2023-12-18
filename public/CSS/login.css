@@ -45,7 +45,7 @@ a{
 
 body::after{
     content: "";
-    background: url(/BackgroundImages/bgimage2.jpg) no-repeat center center/cover;
+    background: url(/BackgroundImages/bgimage2.jpg) no-repeat top center/cover;
     position: fixed;
     top: 0px;
     left: 0px;
