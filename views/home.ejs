@@ -5,6 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <title>Thegardenofeat'n.com | Home</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -27,7 +46,7 @@
         </div>
 
         <div id="name">
-            <h3>the <span> garden </span> of eat'n</h3>
+            <h3><a href="/">the <span> garden </span> of eat'n</a></h3>
         </div>
 
         <div class="search">
@@ -80,15 +99,17 @@
                     <li><a href="/home"><i class="fa-solid fa-house"></i>home</a></li>
 
                     <li><a href="/about-us"><i class="fa-solid fa-chalkboard-user"></i>about us</a></li>
-                    
+
                     <li><a href="/book-table"><i class="fa-solid fa-utensils"></i>book a table</a></li>
-                    
+
                     <li><a href="/join-us"><i class="fa-solid fa-handshake-simple"></i>join us</a></li>
+
+                    <li><a href="/contact-us"><i class="fa-solid fa-phone"></i>contact us</a></li>
 
                     <li><a href=""><i class="fa-solid fa-utensils"></i>our services</a></li>
 
                     <li class="profile"><a href="/profile"><i class="fa-solid fa-user"></i>edit profile</a></li>
-                    
+
                     <li><a href=""><i class="fa-solid fa-cart-shopping"></i>go to cart</a></li>
 
                     <li><a href=""><i class="fa-solid fa-calendar"></i>your orders</a></li>
@@ -102,7 +123,7 @@
                             <button><i class="fa-solid fa-right-from-bracket"></i>logout</button>
                         </form>
                     </li>
-                    
+
                     <div class="copyright">
                         <p>
                             Copyright &#169; <span id="copyright-year"></span>
@@ -147,15 +168,15 @@
 
             <div class="advertisement">
                 <h3>eat what makes you happy</h3>
-    
+
                 <div class="container">
                     <div class="items-wrapper">
                         <button id="prev-slide" class="slide-button">
                             <i class="fa-solid fa-chevron-left"></i>
                         </button>
-    
+
                         <div class="items-list">
-    
+
                             <div class="items">
                                 <img class="items-img" src="BackgroundImages/biryani1.png" alt="">
                                 <p>biryani</p>
@@ -192,55 +213,55 @@
                                 <img class="items-img" src="BackgroundImages/chocolate-muffin.png" alt="">
                                 <p>muffin</p>
                             </div>
-    
+
                         </div>
-    
+
                         <button id="next-slide" class="slide-button">
                             <i class="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
                 </div>
-    
+
             </div>
-    
-    
+
+
             <div class="food-container">
-    
+
                 <% for (let eachCategory of menu) {%>
                     <div id="<%= eachCategory.content.url %>">
                         <h3 class="category-name">
                             <i class="fa-solid fa-chevron-right"></i>
                             <%= eachCategory.category %>
                         </h3>
-    
+
                         <div class="food-wrapper">
                             <% for (let item of eachCategory.content.items) { %>
-    
+
                                 <div>
                                     <figure class="item-img-container">
                                         <img src="BackgroundImages/coffee.png" alt="">
                                     </figure>
-    
+
                                     <p class="name">
                                         <%= item %>
                                     </p>
                                     <p class="price"><i class="fa-solid fa-indian-rupee-sign"></i>20.000</p>
-    
+
                                     <button>Add to cart</button>
                                 </div>
-    
+
                                 <%}%>
                         </div>
                     </div>
                     <%}%>
             </div>
-    
+
         </section>
 
 
     </section>
 
-    
+
 
 
 

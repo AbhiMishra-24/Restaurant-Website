@@ -1,18 +1,3 @@
-// TOGGLE HAMBURGER ICON
-
-let hamburger = document.querySelector(".hamburger-icon");
-let hamburgerElement1 = document.querySelector(".hamburger-icon>p:first-child");
-let hamburgerElement2 = document.querySelector(".hamburger-icon>p:nth-child(2)");
-let hamburgerElement3 = document.querySelector(".hamburger-icon>p:last-child");
-
-hamburger.addEventListener("click", () => {
-    hamburgerElement1.classList.toggle("rotate1");
-    hamburgerElement3.classList.toggle("rotate2");
-    hamburgerElement2.classList.toggle("display-none");
-});
-
-
-
 // PROFILE PHOTO
 
 let uploadButton = document.getElementById("upload-button");
@@ -25,17 +10,32 @@ uploadButton.onchange = () => {
 
     reader.onload = () => {
         chosenImage.setAttribute("src", reader.result);
-        urlInput.value = reader.result;
-        // console.log(reader.result);
     }
 }
 
 
+// TOGGLE PROFILE DROPDOWN
 
-// COPYRIGHT YEAR
+let profileImg = document.getElementById("profileImg");
+let dropdownContent = document.querySelector(".dropdown .dropdown-content");
 
-let copyright = document.querySelector("#copyright-year");
+if (profileImg) {
+    profileImg.addEventListener("click", () => {
+        dropdownContent.classList.toggle("display-none");
+    })
+    
+    document.addEventListener("click", (event) => {
+        
+        if (!profileImg.contains(event.target) && !dropdownContent.contains(event.target)) {
+            dropdownContent.classList.add("display-none");
+        }
+    })
+}
 
-const year = new Date().getFullYear();
 
-copyright.innerHTML = year;
+// FOOTER COPYRIGHT YEAR DISPLAY
+
+let foot=document.getElementById('foot');
+let date=new Date();
+let year=date.getFullYear();
+foot.innerHTML=year;

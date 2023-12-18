@@ -71,6 +71,7 @@ header{
     left: 0;
     z-index: 3;
     box-shadow: -10px 0px 5px 0px rgba(255, 255, 255, 0.5);
+    /* padding: 0 0.5rem; */
 }
 
 /* HAMBURGER ICON  */
@@ -95,7 +96,7 @@ header{
     padding: 0.5rem 10px;
     border-radius: 10px;
     cursor: pointer;
-    background-color: #000;
+    background-color: #1f1f1f;
 }
 .hamburger-icon > div:hover{
     background-color: #1f1f1f;
@@ -127,25 +128,29 @@ header{
 
 #name{
     /* border: 1px solid white; */
-    width: 100%;
-    height: 100%;
+    font-size: 1.5rem;
     display: flex;
-    align-items: center;
     justify-content: left;
-    position: relative;
+    align-items:last baseline ;
     padding: 0.5rem;
+    position: relative;
+    z-index: 2;
 }
 
-#name h3{
+#name h3 a{
+    margin-left: 1rem;
+    outline-width: 2px;
+    outline-color: black;
+    position: relative;
+    text-align: center;
     -webkit-text-fill-color: white;
     text-transform: capitalize;
     font-family: 'Berkshire Swash', cursive;
     pointer-events: none;
-    font-size: 1.5rem;
 }
 
-#name h3 span{
-    font-size: 1.5rem;
+#name h3 a span{
+    position: relative;
     background: linear-gradient(90deg, yellow, rgb(11, 226, 11), yellow, rgb(11, 226, 11));
     background-clip: text;
     -webkit-background-clip: text;
@@ -164,7 +169,7 @@ header{
     align-items: center;
     justify-content: centerf;
     background-color: black;
-    padding-left: 5%;
+    padding-left: 15%;
 }
 
 .search label{
@@ -276,6 +281,7 @@ header{
     align-items: center;
     justify-content: center;
     padding: 1rem;
+    user-select: none;
 }
 .search-dropdown p.no-item-found-msg.display-none{
     display: none;
@@ -283,6 +289,7 @@ header{
 .search-dropdown .no-item-found-msg > img{
     width: 4rem;
     filter: grayscale(100%);
+    user-select: none;
 }
 
 

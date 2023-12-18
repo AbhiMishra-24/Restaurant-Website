@@ -28,6 +28,16 @@ router.route("/about-us")
         res.render("aboutus", {user});
     })
 
+router.route("/contact-us")
+    .get( async (req, res) => {
+        let user = null;
+        if (req.cookies.user) {
+            user = await User.findOne({_id: req.cookies.user});
+        }
+
+        res.render("contactus", {user});
+    })
+
 router.route("/join-us")
     .get( async (req, res) => {
 
@@ -169,34 +179,38 @@ router.route("/profile")
 
     .post(upload.single("profileImg"), async (req, res) => {
 
-        console.log(req.file);
+        let user = await User.findById({ _id: req.cookies.user });
 
         const { id, name, username, mobileNumber, gender, DOB } = req.body;
 
-        let profileImg;
+        let profileImg, path;
 
         if (!req.file) {
-            profileImg = null;
-            // console.log("file not.");
+            profileImg = user.profileImg;
+            path = null;
         } else {
             profileImg = req.file.originalname;
-            // console.log("file exist.");
+            path = req.file.path;
         }
 
-        let user = await User.findById({ _id: req.cookies.user });
-
-        if (!profileImg || !name || !username || !mobileNumber || !gender || !DOB) {
-            res.status(422).render("profile", { user, message: "Fill all the fields are as asterisk!" });
+        if (!name || !username || !mobileNumber || !gender || !DOB) {
+            res.status(422).render("profile", { user, message: "Fill all the fields marked as asterisk!" });
         }
 
         else {
 
-            const response = await uploadOnCloudinary(req.file.path);
+            let response = profileImg;
+
+            if (path) {
+                response = await uploadOnCloudinary(req.file.path);
+
+                response = response.secure_url;
+            }    
 
             const filter = { _id: id };
 
             const update = {
-                profileImg: response.secure_url,
+                profileImg: response,
                 name: name,
                 username: username,
                 mobileNumber: mobileNumber,

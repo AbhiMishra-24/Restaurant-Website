@@ -84,7 +84,7 @@ header{
     z-index: 2;
 }
 
-#name h3{
+#name h3 a{
     margin-left: 3rem;
     outline-width: 2px;
     outline-color: black;
@@ -96,7 +96,7 @@ header{
     pointer-events: none;
 }
 
-#name h3 span{
+#name h3 a span{
     position: relative;
     background: linear-gradient(90deg, yellow, rgb(11, 226, 11), yellow, rgb(11, 226, 11));
     background-clip: text;

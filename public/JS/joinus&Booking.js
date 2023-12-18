@@ -17,24 +17,6 @@ if (profileImg) {
     })
 }
 
-
-// ABOUT US -> READ MORE 
-
-let readMoreBtn = document.getElementById("readMoreBtn");
-
-readMoreBtn.addEventListener("click", () => {
-    let textToShow = document.getElementsByClassName("more-aboutus-text");
-
-    for (var i=0; i<textToShow.length; i++){
-        textToShow[i].classList.toggle("display-none");
-    }
-
-    readMoreBtn.classList.add("display-none");
-})
-
-
-
-
 // FOOTER COPYRIGHT YEAR DISPLAY
 
 let foot=document.getElementById('foot');
