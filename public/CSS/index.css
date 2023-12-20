@@ -2,7 +2,593 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Berkshire+Swash&family=Montserrat:wght@100;400;500;600;700;800;900&family=Roboto:wght@400;500&display=swap');
 
 
-::-webkit-scrollbar{
+/*-----------------------------------*\
+  #index.css
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+  /*
+    - colors
+  */
+
+  --cherry-red: #750E21;
+  --light-gold: #FFECD6;
+  --gold-crayola: hsl(38, 61%, 73%);
+  --quick-silver: hsla(0, 0%, 65%, 1);
+  --davys-grey: hsla(30, 3%, 34%, 1);
+  --smoky-black-1: hsla(40, 12%, 5%, 1);
+  --smoky-black-2: hsla(30, 8%, 5%, 1);
+  --smoky-black-3: hsla(0, 3%, 7%, 1);
+  --eerie-black-1: hsla(210, 4%, 9%, 1);
+  --eerie-black-2: hsla(210, 4%, 11%, 1);
+  --eerie-black-3: hsla(180, 2%, 8%, 1);
+  --eerie-black-4: hsla(0, 0%, 13%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  --white-alpha-20: hsla(0, 0%, 100%, 0.2);
+  --white-alpha-10: hsla(0, 0%, 100%, 0.1);
+  --black: hsla(0, 0%, 0%, 1);
+  --black-alpha-80: hsla(0, 0%, 0%, 0.8);
+  --black-alpha-15: hsla(0, 0%, 0%, 0.15);
+
+  /*
+    - color gradients
+  */
+
+  --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--smoky-black-3) 33.33% 50%, transparent 66.66% 75%);
+  --gradient-1: linear-gradient(to top, hsla(0, 0%, 0%, 0.9), hsla(0, 0%, 0%, 0.7), transparent);
+
+  /*
+    - font family
+  */
+
+  --fontFamily-forum: 'Forum', cursive;
+  --fontFamily-dm_sans: 'DM Sans', sans-serif;
+
+  /*
+    - font-size
+  */
+
+  --fontSize-display-1: calc(1.3rem + 6.7vw);
+  --fontSize-headline-1: calc(2rem + 2.5vw);
+  --fontSize-headline-2: calc(1.3rem + 2.4vw);
+  --fontSize-title-1: calc(1.6rem + 1.2vw);
+  --fontSize-title-2: 2.2rem;
+  --fontSize-title-3: 2.1rem;
+  --fontSize-title-4: calc(1.6rem + 1.2vw);
+  --fontSize-body-1: 2.4rem;
+  --fontSize-body-2: 1.6rem;
+  --fontSize-body-3: 1.8rem;
+  --fontSize-body-4: 1.6rem;
+  --fontSize-label-1: 1.4rem;
+  --fontSize-label-2: 1.2rem;
+
+  /*
+    - font-weight
+  */
+
+  --weight-regular: 400;
+  --weight-bold: 700;
+
+  /*
+    - line-height
+  */
+
+  --lineHeight-1: 1em;
+  --lineHeight-2: 1.2em;
+  --lineHeight-3: 1.5em;
+  --lineHeight-4: 1.6em;
+  --lineHeight-5: 1.85em;
+  --lineHeight-6: 1.4em;
+
+  /*
+    - letter-spacing
+  */
+
+  --letterSpacing-1: 0.15em;
+  --letterSpacing-2: 0.4em;
+  --letterSpacing-3: 0.2em;
+  --letterSpacing-4: 0.3em;
+  --letterSpacing-5: 3px;
+
+  /*
+    - section-spacing
+  */
+
+  --section-space: 70px;
+
+  /*
+    - shadow
+  */
+
+  --shadow-1: 0px 0px 25px 0px hsla(0, 0%, 0%, 0.25);
+
+  /*
+  - border-radius
+  */
+
+  --radius-24: 24px;
+  --radius-circle: 50%;
+
+  /*
+    - transition
+  */
+
+  --transition-1: 250ms ease;
+  --transition-2: 500ms ease;
+  --transition-3: 1000ms ease;
+
+}
+
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+
+img {
+  height: auto;
+}
+
+input,
+button,
+select,
+textarea {
+  background: none;
+  border: none;
+  outline: none;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+
+body {
+  background-color: var(--gold-crayola);
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+  height: 300vh;
+}
+
+body.loaded {
+  overflow: overlay;
+}
+
+body.nav-active {
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--gold-crayola);
+}
+
+
+/*-----------------------------------*\
+  #TYPOGRAPHY
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #PRELOAD
+\*-----------------------------------*/
+
+
+.preload {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--light-gold);
+  z-index: 10;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  transition: var(--transition-2);
+}
+
+.preload>* {
+  transition: var(--transition-1);
+}
+
+.preload.loaded>* {
+  opacity: 0;
+}
+
+.preload.loaded {
+  transition-delay: 250ms;
+  transform: translateY(100%);
+}
+
+.preload .circle {
+  width: 112px;
+  height: 112px;
+  border-radius: var(--radius-circle);
+  border: 3px solid var(--white);
+  border-block-start-color: var(--smoky-black-3);
+  margin-block-end: 50px;
+  animation: rotate360 1s linear infinite;
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.preload .text {
+  font-size: calc(16px + 3vw);
+  font-weight: var(--weight-bold);
+  line-height: 1em;
+  color: var(--cherry-red);
+  padding-inline-start: 10px;
+  letter-spacing: 2px;
+}
+
+
+/*-----------------------------------*\
+  #TOPBAR
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5.5rem;
+  background-color: var(--black);
+  box-shadow: 0 0 5px 0 black;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-inline: 14px;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.container>a.logo {
+  width: 80vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+  gap: 5px;
+}
+
+.container>a.logo>p {
+  color: var(--white);
+  font-weight: 400;
+  font-size: calc(16px + 1vw);
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px 0 black;
+}
+
+.hamburger-icon {
+  /* border: 1px solid white; */
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 0.7rem;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: #222;
+}
+
+.hamburger-icon:hover {
+  background-color: #222;
+}
+
+.hamburger-icon > p{
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  transition: 0.2s ease;
+}
+
+p.rotate1{
+  transform: rotate(-45deg);
+  position: relative;
+  top: 2.5px;
+}
+p.rotate2{
+  transform: rotate(45deg);
+  position: relative;
+  bottom: 2.5px;
+}
+p.display-none{
+  display: none;
+}
+
+
+/*
+  - NAVBAR
+*/
+
+.navbar {
+  position: absolute;
+  top: 6.5rem;
+  right: 1rem;
+  width: max-content;
+  background-color: black;
+  border-radius: 15px;
+  padding: 20px 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.navbar.hide {
+  display: none;
+}
+
+.navbar-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.navbar-items {
+  /* border-top: 1px solid grey; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-items a {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 15px 15px;
+  gap: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.navbar-items a i {
+  font-size: 12px;
+  width: 20px;
+  text-align: center;
+}
+
+.navbar-items a:hover,
+.navbar-items a:focus{
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: 600;
+}
+
+.login-signup-bar{
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.login-signup-bar div {
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border-radius: 10px;
+  margin-block: 20px;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.login-signup-bar div button {
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+.login-signup-bar button.signup {
+  /* border-left: 1px solid white; */
+  background-color: white;
+  color: black;
+  font-weight: 600;
+}
+
+.login-signup-bar button:hover,
+.login-signup-bar button:focus {
+  background-color: #ddd;
+  color: black;
+  font-weight: 600;
+}
+
+.navbar .text-center {
+  padding: 15px;
+}
+
+.text-center .visit-us {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.text-center address {
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 400;
+  margin-block: 10px;
+}
+
+.text-center a {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.text-center a i {
+  font-size: 10px;
+  width: 10px;
+  text-align: center;
+}
+
+
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #SERVICE
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #ABOUT
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #SPECIAL DISH
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #MENU
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #TESTIMONIALS
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #RESERVATION
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #FEATURES
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #EVENT
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #BACK TO TOP
+\*-----------------------------------*/
+
+
+
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+
+/* ::-webkit-scrollbar{
     width: 15px;
 }
 
@@ -52,7 +638,7 @@ body::before {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    /* opacity: 0.7; */
+    opacity: 0.7;
 }
 
 
@@ -78,7 +664,7 @@ header{
 }
 
 #name{
-    /* border: 1px solid white; */
+    border: 1px solid white;
     font-size: 2.3rem;
     display: flex;
     align-items: center;
@@ -104,11 +690,11 @@ header{
 
 .chef-photo{
     width: 100%;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     background: url(/BackgroundImages/chef-with-table.png) no-repeat center;
     background-size: contain;
     margin-bottom: 2rem;
-}
+} */
 
 /* .animation{
     border: 1px solid white;
@@ -261,14 +847,14 @@ header{
 
 /* RIGHT SECTION STYLING */
 
-#right{
-    /* border: 1px solid green; */
+/* #right{
+    border: 1px solid green;
     margin: 2rem;
     height: calc(100vh - 4rem)
 }
 
 #navbar{
-    /* border: 1px solid white; */
+    border: 1px solid white;
     background-color: black;
     border-radius: 16px;
     position: fixed;
@@ -276,18 +862,18 @@ header{
     right: 1rem;
     width: 52rem;
     z-index: 3;
-    /* padding-left: 3rem; */
+    padding-left: 3rem;
 }
 
 #navbar ul{
-    /* border: 1px solid white; */
+    border: 1px solid white;
     display: flex;
     justify-content: right;
     align-items: center;
 }
 
 #navbar li{
-    /* border: 1px solid white; */
+    border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -296,7 +882,7 @@ header{
 }
 
 #navbar a{
-    /* border: 1px solid green; */
+    border: 1px solid green;
     text-transform: uppercase;
     color: white;
     font-size: 13px;
@@ -321,16 +907,16 @@ header{
     background: linear-gradient(to left, rgb(135, 200, 235), rgb(135, 175, 235), rgb(135, 150, 235));
 }
 
-/* PROMO SECTION */
+PROMO SECTION
 
 #promo{
-    /* border: 1px solid white; */
+    border: 1px solid white;
     position: relative;
     top: 10rem;
     height: calc(100% - top);
 }
 
-/* #promo>div{border: 1px solid magenta;} */
+#promo>div{border: 1px solid magenta;}
 
 #promo>div:first-child{
     display: flex;
@@ -340,7 +926,7 @@ header{
 }
 
 #promo>div:first-child p{
-    /* font-family: 'Great Vibes', cursive; */
+    font-family: 'Great Vibes', cursive;
     font-size: 4rem;
     font-weight: 800;
     color: #FFECD6;
@@ -360,7 +946,7 @@ header{
     padding: 1rem 2rem;
     font-size: 16px;
     text-transform: uppercase;
-    /* color: white; */
+    color: white;
     font-weight: bold;
     background: linear-gradient(to right, yellow,rgb(255, 208, 0) );
     border: 2px solid white;
@@ -372,7 +958,7 @@ header{
 }
 
 #promo>div:last-child{
-    /* padding: 1rem; */
+    padding: 1rem;
     display: flex;
     justify-content: right;
     align-items: last baseline;
@@ -412,10 +998,10 @@ header{
 }
 
 
-/* FEATURES SECTION */
+FEATURES SECTION
 
 .features{
-    /* border: 2px solid black; */
+    border: 2px solid black;
     background: linear-gradient(to right, rgb(255, 200, 0), rgb(255, 175, 0), rgb(255, 150, 0) );
     border-bottom-right-radius: 30px;
     border-radius: 40px;
@@ -430,22 +1016,22 @@ header{
 }
 
 .features div{
-    /* border: 2px solid red; */
+    border: 2px solid red;
     text-align: center;
 }
 
 .diary img{
-    /* filter: invert(200%); */
+    filter: invert(200%);
     height: 5rem;
     width: 4rem;
 }
 .location img{
-    /* filter: invert(200%); */
+    filter: invert(200%);
     height: 5rem;
     width: 5rem;
 }
 .delivery img{
-    /* filter: invert(200%); */
+    filter: invert(200%);
     height: 5rem;
     width: 7rem;
 }
@@ -464,21 +1050,21 @@ header{
 }
 
 
-/* ABOUT US STYLING */
+ABOUT US STYLING
 
 #aboutus {
     margin: 2.5rem 1rem;
     padding: 2rem;
     width: calc(100% - 2rem);
     height: 100%;
-    /* border: 2px solid green; */
+    border: 2px solid green;
     border-radius: 30px;
     background: url(/BackgroundImages/bgimage2.jpg) no-repeat center center/cover;
     overflow: hidden;
 }
 
 .head{
-    /* border: 1px solid black; */
+    border: 1px solid black;
     position: relative;
     display: flex;
     align-items: center;
@@ -488,7 +1074,7 @@ header{
 }
 
 .heading{
-    /* border: 1px solid black; */
+    border: 1px solid black;
     margin: 0rem 2.5rem;
 }
 
@@ -506,10 +1092,10 @@ header{
 }
 
 .aboutbody{
-    /* border: 2px solid yellow; */
+    border: 2px solid yellow;
     position: relative;
     width: 100%;
-    /* height: 100%; */
+    height: 100%;
     display: block;
 }
 
@@ -517,7 +1103,7 @@ header{
     margin-top: 1rem;
     width: 100%;
     height: 15rem;
-    /* border: 2px solid white; */
+    border: 2px solid white;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -565,10 +1151,10 @@ header{
     border-radius: 50%;
 }
 
-/* CONTACT SECTION STYLING */
+CONTACT SECTION STYLING
 
 .contact{
-    /* border: 2px solid red; */
+    border: 2px solid red;
     display: grid;
     grid-template-columns: 350px auto;
     align-items: center;
@@ -581,7 +1167,7 @@ header{
 }
 
 .contact .contact-head h2{
-    /* border: 2px solid black; */
+    border: 2px solid black;
     background: linear-gradient(to right, rgb(135, 200, 235), rgb(135, 175, 235), rgb(135, 150, 235));
     text-align: center;
     font-size: 3rem;
@@ -639,7 +1225,7 @@ header{
 }
 
 
-/* FOOTER STYLING */
+FOOTER STYLING
 
 footer{
     background-color: black;
@@ -654,4 +1240,4 @@ footer{
 footer span{
     color: white;
     font-size: 15px;
-}
+} */
