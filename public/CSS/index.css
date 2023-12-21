@@ -11,30 +11,39 @@
 
 :root {
 
-  /*
-    - colors
-  */
+  /* COLORS */
 
-  --body-bg: #FFFBF5;
   --cherry-red: #750E21;
   --light-gold: #FFECD6;
-  --gold-crayola: hsl(38, 61%, 73%);
-  --quick-silver: hsla(0, 0%, 65%, 1);
-  --davys-grey: hsla(30, 3%, 34%, 1);
-  --smoky-black-1: hsla(40, 12%, 5%, 1);
-  --smoky-black-2: hsla(30, 8%, 5%, 1);
-  --smoky-black-3: hsla(0, 3%, 7%, 1);
-  --eerie-black-1: hsla(210, 4%, 9%, 1);
-  --eerie-black-2: hsla(210, 4%, 11%, 1);
-  --eerie-black-3: hsla(180, 2%, 8%, 1);
-  --eerie-black-4: hsla(0, 0%, 13%, 1);
-  --white: hsla(0, 0%, 100%, 1);
-  --white-alpha-20: hsla(0, 0%, 100%, 0.2);
-  --white-alpha-10: hsla(0, 0%, 100%, 0.1);
-  --black: hsla(0, 0%, 0%, 1);
-  --black-alpha-80: hsla(0, 0%, 0%, 0.8);
-  --black-alpha-15: hsla(0, 0%, 0%, 0.15);
 
+  --rest-name: #fff;
+  --carousel-heading-text: #750E21;
+  --food-container-text: #750E21;
+  --food-items-name: #000;
+  --food-items-price: #000;
+  
+  --body-bg: #FFECD6;
+  --header-bg: #000;
+  --search-icon-bg: #222;
+  --search-dropdown-bg: #000;
+  --search-menu-bg: #111;
+  --navbar-bg: #000;
+  --signup-bg: #fff;
+  --menu-wrapper-bg: #000;
+  --menu-category-wrapper-bg: #181818;
+  --carousel-heading-bg: #FFC5C5;
+  --carousel-items-bg: #000;
+  --food-container-heading-bg: #FFC5C5;
+  --food-items-bg: #FFC5C5;
+
+  --menu-btn: #750E21;
+  --slider-btn: #750E21;
+  --cart-btn: #750E21;
+
+  /* FONT FAMILY */
+
+  --rest-name-font: 'Merienda', cursive;
+  --heading-font: 'Merienda', cursive;
 }
 
 
@@ -51,6 +60,7 @@
   box-sizing: border-box;
   outline: none;
   border: none;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -85,7 +95,7 @@ li {
 
 body {
   width: 100vw;
-  background-color: var(--light-gold);
+  background-color: var(--body-bg);
   color: var(--white);
   font-family: 'Montserrat', sans-serif;
   overflow: hidden;
@@ -95,10 +105,7 @@ body {
 
 body.loaded {
   overflow: overlay;
-}
-
-body.nav-active {
-  overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -113,21 +120,6 @@ body.nav-active {
 ::-webkit-scrollbar-thumb {
   background-color: var(--gold-crayola);
 }
-
-
-/*-----------------------------------*\
-  #TYPOGRAPHY
-\*-----------------------------------*/
-
-
-
-
-
-/*-----------------------------------*\
-  #REUSED STYLE
-\*-----------------------------------*/
-
-
 
 
 
@@ -194,13 +186,6 @@ body.nav-active {
 }
 
 
-/*-----------------------------------*\
-  #TOPBAR
-\*-----------------------------------*/
-
-
-
-
 
 /*-----------------------------------*\
   #HEADER
@@ -214,7 +199,7 @@ body.nav-active {
   z-index: 5;
   width: 100%;
   height: 5.5rem;
-  background-color: var(--black);
+  background-color: var(--header-bg);
   box-shadow: 0 0 5px 0 black;
 }
 
@@ -229,7 +214,6 @@ body.nav-active {
 }
 
 .container>a.logo {
-  /* border: 1px solid white; */
   width: 65vw;
   height: 100%;
   display: flex;
@@ -237,14 +221,13 @@ body.nav-active {
   justify-content: left;
   position: relative;
   gap: 5px;
-  font-family: 'Merienda', cursive;
 }
 
 .container>a.logo>p {
-  color: var(--white);
+  font-family: var(--rest-name-font);
+  color: var(--rest-name);
   font-weight: 900;
   font-size: calc(16px + 1.5vw);
-  /* letter-spacing: 2px; */
   text-shadow: 0 0 5px 0 black;
 }
 
@@ -253,13 +236,11 @@ body.nav-active {
   - SEARCH ICON
 */
 
-.search-icon {
-  /* position: relative; */
-}
 
 .search-icon>i {
-  padding: 01rem;
-  background-color: #222;
+  padding: 1rem;
+  background-color: var(--search-icon-bg);
+  color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -281,7 +262,7 @@ body.nav-active {
   transition: 0.4s ease transform;
   z-index: 3;
   width: max-content;
-  background-color: black;
+  background-color: var(--search-dropdown-bg);
   border-radius: 15px;
   padding: 15px 20px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
@@ -352,7 +333,7 @@ body.nav-active {
   padding-inline: 15px;
   padding-block: 10px;
   border-radius: 8px;
-  background-color: #111;
+  background-color: var(--search-menu-bg);
   color: white;
   font-size: 14px;
   text-transform: uppercase
@@ -451,12 +432,13 @@ p.display-none {
   height: 3rem;
 }
 
-.profile-icon > figure {
+.profile-icon>figure {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   border: 4px solid white;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .profile-icon img {
@@ -483,7 +465,7 @@ p.display-none {
   z-index: 4;
   width: max-content;
   max-height: calc(100vh - 6.5rem - 10rem);
-  background-color: black;
+  background-color: var(--navbar-bg);
   padding: 20px;
   border-radius: 15px;
   overflow-x: hidden;
@@ -494,7 +476,6 @@ p.display-none {
 }
 
 .navbar.hide {
-  /* display: none; */
   transform: translateX(150vw);
 }
 
@@ -642,7 +623,7 @@ p.display-none {
   bottom: 2rem;
   right: 1rem;
   z-index: 4;
-  background-color: var(--cherry-red);
+  background-color: var(--menu-btn);
   padding: 12px 15px;
   border-radius: 10px;
   width: 6.5rem;
@@ -675,7 +656,7 @@ p.display-none {
 .menu-wrapper {
   width: calc(15rem + 20vw);
   height: calc(10rem + 25vh);
-  background-color: var(--black);
+  background-color: var(--menu-wrapper-bg);
   position: fixed;
   bottom: 6.5rem;
   right: 1rem;
@@ -693,7 +674,7 @@ p.display-none {
 }
 
 .menu-category-wrapper {
-  background-color: #181818;
+  background-color: var(--menu-category-wrapper-bg);
   border-radius: 8px;
   padding-block: 15px;
   padding-inline: 20px;
@@ -743,13 +724,16 @@ p.display-none {
 }
 
 .carousel h3 {
-  font-family: 'Merienda', cursive;
+  font-family: var(--heading-font);
   font-weight: 900;
   font-size: calc(20px + 2vw);
   color: var(--cherry-red);
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 15px;
+  background-color: var(--carousel-heading-bg);
+  margin-bottom: 25px;
+  border-radius: 10px;
 }
 
 .carousel-wrapper {
@@ -767,7 +751,7 @@ p.display-none {
   align-items: center;
   justify-content: center;
   color: #fff;
-  background-color: #750E21;
+  background-color: var(--slider-btn);
   box-shadow: 0 0 5px 0 #000;
   border: none;
   outline: none;
@@ -803,8 +787,7 @@ p.display-none {
 .carousel-wrapper .items-list .items {
   width: 160px;
   height: 180px;
-  background-color: var(--light-gold);
-  background-color: #000;
+  background-color: var(--carousel-items-bg);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -847,13 +830,15 @@ p.display-none {
 }
 
 .food-container h2 {
-  font-family: 'Merienda', cursive;
+  background-color: var(--food-container-heading-bg);
+  font-family: var(--heading-font);
+  border-radius: 10px;
   font-weight: 900;
   font-size: calc(20px + 2vw);
   color: var(--cherry-red);
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .food-container h3 {
@@ -869,7 +854,7 @@ p.display-none {
   padding: 10px 15px;
   border-radius: 15px;
   background-color: #111;
-  font-family: 'Merienda', cursive;
+  font-family: var(--heading-font);
 }
 
 .food-container h3 i {
@@ -892,7 +877,7 @@ p.display-none {
 .food-container div.food-wrapper>div {
   height: 250px;
   padding: 10px;
-  background-color: #5C8374;
+  background-color: var(--food-items-bg);
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -918,7 +903,7 @@ p.display-none {
 }
 
 .food-container .food-wrapper p.name {
-  color: black;
+  color: var(--food-items-name);
   height: 2rem;
   text-align: center;
   text-transform: uppercase;
@@ -930,7 +915,7 @@ p.display-none {
 }
 
 .food-container .food-wrapper p.price {
-  color: black;
+  color: var(--food-items-price);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -947,7 +932,7 @@ p.display-none {
   padding: 0.5rem 1rem;
   border: none;
   outline: none;
-  background-color: #750E21;
+  background-color: var(--cart-btn);
   color: white;
   cursor: pointer;
   border-radius: 6px;
@@ -982,7 +967,7 @@ footer a {
   width: max-content;
 }
 
-footer span{
+footer span {
   color: white;
   font-size: 14px;
 }

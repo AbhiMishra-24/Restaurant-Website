@@ -186,6 +186,9 @@ const carousel = () => {
     })
 
     const handleSlideButtons = () => {
+
+        console.log(maxScrollLeft, itemsList.scrollLeft);
+
         slideButtons[0].style.display = itemsList.scrollLeft <= 0 ? "none" : "flex";
         slideButtons[1].style.display = itemsList.scrollLeft >= maxScrollLeft ? "none" : "flex";
     }

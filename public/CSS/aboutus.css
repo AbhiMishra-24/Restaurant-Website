@@ -2,6 +2,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Berkshire+Swash&family=Montserrat:wght@100;400;500;600;700;800;900&family=Roboto:wght@400;500&display=swap');
 
 
+:root {
+    --rest-name: #fff;
+    --carousel-heading-text: #750E21;
+    --food-container-text: #750E21;
+    --food-items-name: #000;
+    --food-items-price: #000;
+
+    --search-icon-bg: #222;
+    --search-dropdown-bg: #000;
+    --search-menu-bg: #111;
+    --navbar-bg: #000;
+    --signup-bg: #fff;
+    --menu-wrapper-bg: #000;
+    --menu-category-wrapper-bg: #181818;
+    --carousel-heading-bg: #FFC5C5;
+    --carousel-items-bg: #000;
+    --food-container-heading-bg: #FFC5C5;
+    --food-items-bg: #FFC5C5;
+
+    --menu-btn: #750E21;
+    --slider-btn: #750E21;
+    --cart-btn: #750E21;
+
+
+    --rest-name-font: 'Merienda', cursive;
+    --heading-font: 'Merienda', cursive;
+}
+
+
+
+
+
 ::-webkit-scrollbar{
     width: 15px;
 }
