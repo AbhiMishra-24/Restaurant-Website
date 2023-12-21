@@ -9,6 +9,16 @@ window.addEventListener("load", () => {
 })
 
 
+// TOGGLE SEARCHBAR
+
+let searchIcon = document.querySelector("[data-search-icon]");
+
+searchIcon.addEventListener("click", () => {
+    let searchDropdown = document.querySelector("[data-search-dropdown]");
+
+    searchDropdown.classList.toggle("hide");
+});
+
 
 // TOGGLE HAMBURGER ICON.
 let hamburger = document.querySelector(".hamburger-icon");
@@ -26,20 +36,69 @@ hamburger.addEventListener("click", () => {
     navbar.classList.toggle("hide");
 });
 
+
+// TOGGLE MENU BUTTON.
+
+let menuBtn = document.querySelectorAll(".menu > button");
+
+menuBtn.forEach(btn => {
+    btn.addEventListener("click", (event) => {
+
+        let menu = document.querySelector("[data-menu-wrapper]")
+
+        let showMenuBtn = document.querySelector("[data-show-menu]");
+        let closeMenuBtn = document.querySelector("[data-close-menu]");
+
+        showMenuBtn.classList.toggle("hide");
+        closeMenuBtn.classList.toggle("hide");
+
+        menu.classList.toggle("hide");
+    });
+});
+
+
+// DOCUMENT.
+
 document.addEventListener("click", (event) => {
+
+    // HAMBURGER
 
     let hamburgerElement1 = document.querySelector(".hamburger-icon p:first-child");
     let hamburgerElement2 = document.querySelector(".hamburger-icon p:nth-child(2)");
     let hamburgerElement3 = document.querySelector(".hamburger-icon p:last-child");
 
+    // SEARCH DROPDOWN
+
+    let searchDropdown = document.querySelector("[data-search-dropdown]");
+
+    // MENU 
+
+    let menu = document.querySelector("[data-menu-wrapper]");
+
+    let showMenuBtn = document.querySelector("[data-show-menu]");
+    let closeMenuBtn = document.querySelector("[data-close-menu]");
+
+
     if (!hamburger.contains(event.target) && !navbar.contains(event.target)) {
-        navbar.classList.toggle("hide");
+
+        navbar.classList.add("hide");
 
         if (hamburgerElement1.classList.contains("rotate1")) {
-            hamburgerElement1.classList.remove("rotate1")
-            hamburgerElement3.classList.toggle("rotate2");
-            hamburgerElement2.classList.toggle("display-none");
+            hamburgerElement1.classList.remove("rotate1");
+            hamburgerElement3.classList.remove("rotate2");
+            hamburgerElement2.classList.remove("display-none");
 
         }
     }
+
+    if (!searchIcon.contains(event.target) && !searchDropdown.contains(event.target)) {
+        searchDropdown.classList.add("hide");
+    }
+
+    if (!menu.contains(event.target) && !showMenuBtn.contains(event.target)) {
+        menu.classList.add("hide");
+        showMenuBtn.classList.remove("hide");
+        closeMenuBtn.classList.add("hide");
+    }
+    
 })
