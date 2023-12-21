@@ -30,7 +30,7 @@
             <div class="chef-photo">
                 
             </div> -->
-            <!-- <div class="animation">
+    <!-- <div class="animation">
                 <div>
                     <div class="plate">
 
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div> -->
-        <!-- </div>
+    <!-- </div>
         <div id="right">
             <div id="navbar">
                 <ul>
@@ -222,19 +222,22 @@
 
                     <div class="search-dropdown-menu" data-search-dropdown-menu>
 
-                        <a href="#">coffee</a>
-                        <a href="#">coffee</a>
-                        <a href="#">coffee</a>
-                        <a href="#">coffee</a>
-                        <a href="#">coffee</a>
-                        <a href="#">coffee</a>
-                        <a href="#">coffee</a>
-                        <a href="#">coffee</a>
-                        <a href="#">coffee</a>
-                        <a href="#">coffee</a>
-                        <a href="#">coffee</a>
-                        <a href="#">coffee</a>
-                        <a href="#">coffee</a>
+                        <% for (let eachCategory of menu ) { %>
+                            <a data-each-category href="#<%= eachCategory.content.url %>">
+                                <%=eachCategory.category%>
+                            </a>
+
+                            <% for (let item of eachCategory.content.items) { %>
+                                <a data-category-items class="hide" href="#<%= eachCategory.content.url %>">
+                                    <%=item%>
+                                </a>
+                                <%}%>
+                                    <%}%>
+
+                                        <p data-no-item class=" no-item-found-msg hide">
+                                            <img src="/BackgroundImages/sad-emoji.png">
+                                            Item Not Found!
+                                        </p>
 
                     </div>
 
@@ -347,123 +350,101 @@
         </button>
 
         <div class="menu-wrapper hide" data-menu-wrapper>
+            <% for (let eachCategory of menu) { %>
 
-            <div>
                 <div class="menu-category-wrapper">
 
-                    <a href="#" class="category-head">coffee</a>
+                    <a href="#<%= eachCategory.content.url %>" class="category-head">
+                        <%= eachCategory.category %>
+                    </a>
 
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">bdjkbcdskvbdskjvbsdk</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
+                    <% for (let item of eachCategory.content.items) { %>
 
+                        <div class="category-items">
+                            <i class="fa-solid fa-stop"></i>
+                            <a href="#<%= eachCategory.content.url %>">
+                                <%= item %>
+                            </a>
+                        </div>
+
+                        <%}%>
                 </div>
-                <div class="menu-category-wrapper">
-
-                    <a href="#" class="category-head">coffee</a>
-
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-
-                </div>
-                <div class="menu-category-wrapper">
-
-                    <a href="#" class="category-head">coffee</a>
-
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-
-                </div>
-                <div class="menu-category-wrapper">
-
-                    <a href="#" class="category-head">coffee</a>
-
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-
-                </div>
-                <div class="menu-category-wrapper">
-
-                    <a href="#" class="category-head">coffee</a>
-
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-                    <div class="category-items">
-                        <i class="fa-solid fa-stop"></i>
-                        <a href="#">nescafe</a>
-                    </div>
-
-                </div>
-
-            </div>
+                <%}%>
         </div>
 
     </section>
+
+
+
+    <section class="carousel">
+        <h3>eat what makes you happy</h3>
+
+        <div class="carousel-wrapper" data-carousel>
+
+            <button data-prev-slide id="prev" class="slide-button prev hide">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <button data-next-slide id="next" class="slide-button next">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div class="items-list">
+
+                <% for (let item of carouselList) { %>
+
+                    <div class="<%=item.class%>">
+                        <img class="items-img" src="/BackgroundImages/<%=item.src%>" alt="">
+                        <p>
+                            <%=item.name%>
+                        </p>
+                    </div>
+
+                    <% } %>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="food-container">
+
+        <% for (let eachCategory of menu) {%>
+            <div id="<%= eachCategory.content.url %>">
+                <h3 class="category-name">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <%= eachCategory.category %>
+                </h3>
+
+                <div class="food-wrapper">
+                    <% for (let item of eachCategory.content.items) { %>
+
+                        <div>
+                            <figure class="item-img-container">
+                                <img src="BackgroundImages/coffee.png" alt="">
+                            </figure>
+
+                            <p class="name">
+                                <%= item %>
+                            </p>
+                            <p class="price"><i class="fa-solid fa-indian-rupee-sign"></i>20.000</p>
+
+                            <button>Add to cart</button>
+                        </div>
+
+                        <%}%>
+                </div>
+            </div>
+            <%}%>
+
+    </section>
+
+
+    <footer>
+        Copyright &copy <span id="foot"></span>
+        Created by <a href="https://www.linkedin.com/in/abhishek-kumar-mishra-99b356248/">Abhishek Mishra</a>
+    </footer>
 
 
 </body>

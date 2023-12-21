@@ -7,64 +7,78 @@ import bcrypt from "bcryptjs";
 import { upload } from "../file upload/multer.middleware.js";
 import { uploadOnCloudinary } from "../file upload/cloudinary.js";
 
+import { carouselList } from "../JSON assets/carousel.list.js";
+
 const router = Router();
 
-router.get("/", (req, res) => {
-    if (req.cookies.user) {
-        res.redirect("/home");
-    } else {
-        res.render("index");
-    }
+router.get("/", async (req, res) => {
+    
+    const coffee = await Menu.findOne({ category: "coffee" });
+    const soup = await Menu.findOne({ category: "soup" });
+    const snacks = await Menu.findOne({ category: "snacks" });
+    const starters = await Menu.findOne({ category: "starters" });
+    const maincourse = await Menu.findOne({ category: "main course" });
+    const biryani = await Menu.findOne({ category: "biryani" });
+    const bread = await Menu.findOne({ category: "bread" });
+    const southindian = await Menu.findOne({ category: "south indian" });
+    const chinese = await Menu.findOne({ category: "chinese" });
+    const drinks = await Menu.findOne({ category: "drinks" });
+    const dessert = await Menu.findOne({ category: "dessert" });
+
+    const menu = [coffee, soup, snacks, starters, maincourse, biryani, bread, southindian, chinese, drinks, dessert];
+
+    res.render("index", { menu, carouselList });
+
 });
 
 router.route("/about-us")
-    .get( async (req, res) => {
+    .get(async (req, res) => {
 
-        let user = null;
+        let user = false;
         if (req.cookies.user) {
-            user = await User.findOne({_id: req.cookies.user});
+            user = await User.findOne({ _id: req.cookies.user });
         }
 
-        res.render("aboutus", {user});
+        res.render("aboutus", { user });
     })
 
 router.route("/contact-us")
-    .get( async (req, res) => {
+    .get(async (req, res) => {
         let user = null;
         if (req.cookies.user) {
-            user = await User.findOne({_id: req.cookies.user});
+            user = await User.findOne({ _id: req.cookies.user });
         }
 
-        res.render("contactus", {user});
+        res.render("contactus", { user });
     })
 
 router.route("/join-us")
-    .get( async (req, res) => {
+    .get(async (req, res) => {
 
         let user = null;
         if (req.cookies.user) {
-            user = await User.findOne({_id: req.cookies.user});
+            user = await User.findOne({ _id: req.cookies.user });
         }
 
-        res.render("joinus", {user});
+        res.render("joinus", { user });
     });
 
 
 router.route("/book-table")
-    .get( async (req, res) => {
+    .get(async (req, res) => {
 
         let user = null;
 
         if (req.cookies.user) {
-            user = await User.findOne({_id: req.cookies.user});
+            user = await User.findOne({ _id: req.cookies.user });
         }
-           
+
         res.render("booking", { user });
 
     })
 
     .post(async (req, res) => {
-        
+
     })
 
 
@@ -205,7 +219,7 @@ router.route("/profile")
                 response = await uploadOnCloudinary(req.file.path);
 
                 response = response.secure_url;
-            }    
+            }
 
             const filter = { _id: id };
 
@@ -230,17 +244,17 @@ router.route("/profile")
 router.get("/home", async (req, res) => {
     if (req.cookies.user) {
 
-        const coffee = await Menu.findOne({category: "coffee"});
-        const soup = await Menu.findOne({category: "soup"});
-        const snacks = await Menu.findOne({category: "snacks"});
-        const starters = await Menu.findOne({category: "starters"});
-        const maincourse = await Menu.findOne({category: "main course"});
-        const biryani = await Menu.findOne({category: "biryani"});
-        const bread = await Menu.findOne({category: "bread"});
-        const southindian = await Menu.findOne({category: "south indian"});
-        const chinese = await Menu.findOne({category: "chinese"});
-        const drinks = await Menu.findOne({category: "drinks"});
-        const dessert = await Menu.findOne({category: "dessert"});
+        const coffee = await Menu.findOne({ category: "coffee" });
+        const soup = await Menu.findOne({ category: "soup" });
+        const snacks = await Menu.findOne({ category: "snacks" });
+        const starters = await Menu.findOne({ category: "starters" });
+        const maincourse = await Menu.findOne({ category: "main course" });
+        const biryani = await Menu.findOne({ category: "biryani" });
+        const bread = await Menu.findOne({ category: "bread" });
+        const southindian = await Menu.findOne({ category: "south indian" });
+        const chinese = await Menu.findOne({ category: "chinese" });
+        const drinks = await Menu.findOne({ category: "drinks" });
+        const dessert = await Menu.findOne({ category: "dessert" });
 
         const menu = [coffee, soup, snacks, starters, maincourse, biryani, bread, southindian, chinese, drinks, dessert];
 
