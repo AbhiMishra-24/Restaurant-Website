@@ -37,6 +37,15 @@ hamburger.addEventListener("click", () => {
 });
 
 
+// TOGGLE PROFILE ICON.
+
+let profileIcon = document.querySelector("[data-profile-icon-dropdown]");
+
+profileIcon.addEventListener("click", () => {
+    navbar.classList.toggle("hide");
+})
+
+
 // TOGGLE MENU BUTTON.
 
 let menuBtn = document.querySelectorAll(".menu > button");
@@ -79,7 +88,7 @@ document.addEventListener("click", (event) => {
     let closeMenuBtn = document.querySelector("[data-close-menu]");
 
 
-    if (!hamburger.contains(event.target) && !navbar.contains(event.target)) {
+    if (!hamburger.contains(event.target) && !navbar.contains(event.target) && !profileIcon.contains(event.target) ) {
 
         navbar.classList.add("hide");
 

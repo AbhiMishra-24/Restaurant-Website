@@ -12,6 +12,12 @@ import { carouselList } from "../JSON assets/carousel.list.js";
 const router = Router();
 
 router.get("/", async (req, res) => {
+
+    let user = null;
+
+    if (req.cookies.user) {
+        user = await User.findOne( {_id: req.cookies.user });
+    }
     
     const coffee = await Menu.findOne({ category: "coffee" });
     const soup = await Menu.findOne({ category: "soup" });
@@ -27,7 +33,7 @@ router.get("/", async (req, res) => {
 
     const menu = [coffee, soup, snacks, starters, maincourse, biryani, bread, southindian, chinese, drinks, dessert];
 
-    res.render("index", { menu, carouselList });
+    res.render("index", { user, menu, carouselList });
 
 });
 

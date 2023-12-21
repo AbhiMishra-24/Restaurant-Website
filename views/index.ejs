@@ -251,6 +251,17 @@
                 <p></p>
             </div>
 
+            <div class="profile-icon" data-profile-icon-dropdown>
+                
+                <figure>
+                    <img src="<% if (user.profileImg ) { %>
+                        <%= user.profileImg %>  
+                    <% } else { %>
+                        Icons/username-icon.png 
+                        <% } %>" alt="">
+                </figure>
+            </div>
+
             <nav class="navbar hide" data-navbar>
 
                 <ul class="navbar-list">
