@@ -181,17 +181,17 @@ const carousel = () => {
 
 
     // hiding the buttons.
-    itemsList.addEventListener("scroll", () => {
-        handleSlideButtons();
-    })
+    // itemsList.addEventListener("scroll", () => {
+    //     handleSlideButtons();
+    // })
 
-    const handleSlideButtons = () => {
+    // const handleSlideButtons = () => {
 
-        console.log(maxScrollLeft, itemsList.scrollLeft);
+    //     // console.log(maxScrollLeft, itemsList.scrollLeft);
 
-        slideButtons[0].style.display = itemsList.scrollLeft <= 0 ? "none" : "flex";
-        slideButtons[1].style.display = itemsList.scrollLeft >= maxScrollLeft ? "none" : "flex";
-    }
+    //     slideButtons[0].style.display = itemsList.scrollLeft <= 0 ? "none" : "flex";
+    //     slideButtons[1].style.display = itemsList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+    // }
 
 }
 

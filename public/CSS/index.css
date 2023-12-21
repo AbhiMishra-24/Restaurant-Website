@@ -31,10 +31,11 @@
   --signup-bg: #fff;
   --menu-wrapper-bg: #000;
   --menu-category-wrapper-bg: #181818;
-  --carousel-heading-bg: #FFC5C5;
+  --carousel-heading-bg: transparent;
   --carousel-items-bg: #000;
-  --food-container-heading-bg: #FFC5C5;
-  --food-items-bg: #FFC5C5;
+  --food-container-heading-bg: transparent;
+  --food-items-bg: #B0A695;
+  /* --food-items-bg: #9FBB73; */
 
   --menu-btn: #750E21;
   --slider-btn: #750E21;
@@ -501,7 +502,7 @@ p.display-none {
   width: 100%;
   align-items: center;
   text-transform: uppercase;
-  color: var(--white);
+  color: white;
   padding: 15px 15px;
   gap: 10px;
   border-radius: 10px;
@@ -529,6 +530,7 @@ p.display-none {
 
 .navbar-items.logout button {
   background-color: white;
+  color: black;
   width: 100%;
   padding: 15px;
   border-radius: 10px;
@@ -586,6 +588,7 @@ p.display-none {
 .text-center .visit-us {
   text-transform: uppercase;
   font-weight: 600;
+  color: white;
 }
 
 .text-center address {
@@ -593,6 +596,7 @@ p.display-none {
   font-size: 13px;
   font-weight: 400;
   margin-block: 10px;
+  color: white;
 }
 
 .text-center a {
@@ -601,12 +605,14 @@ p.display-none {
   font-size: 13px;
   gap: 5px;
   margin-bottom: 5px;
+  color: white;
 }
 
 .text-center a i {
   font-size: 10px;
   width: 10px;
   text-align: center;
+  color: white;
 }
 
 
