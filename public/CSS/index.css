@@ -949,7 +949,7 @@ p.display-none {
 }
 
 .food-container div.food-wrapper>div {
-  height: 210px;
+  height: 250px;
   padding: 10px;
   background-color: #FFECD6;
   display: flex;
