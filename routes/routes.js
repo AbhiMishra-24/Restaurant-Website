@@ -11,6 +11,16 @@ import { carouselList } from "../JSON assets/carousel.list.js";
 
 const router = Router();
 
+router.get("/header", async(req, res) => {
+    let user = null;
+
+    if (req.cookies.user) {
+        user = await User.findOne({_id: req.cookies.user});
+    }
+
+    res.render("./Header&Footer/header", {user});
+})
+
 router.get("/", async (req, res) => {
 
     let user = null;
@@ -250,6 +260,8 @@ router.route("/profile")
 router.get("/home", async (req, res) => {
     if (req.cookies.user) {
 
+        let user = await User.findOne( {_id: req.cookies.user });
+
         const coffee = await Menu.findOne({ category: "coffee" });
         const soup = await Menu.findOne({ category: "soup" });
         const snacks = await Menu.findOne({ category: "snacks" });
@@ -264,7 +276,7 @@ router.get("/home", async (req, res) => {
 
         const menu = [coffee, soup, snacks, starters, maincourse, biryani, bread, southindian, chinese, drinks, dessert];
 
-        res.render("home", { menu });
+        res.render("home", { user, menu, carouselList });
     }
     else {
         return res.redirect('/login');

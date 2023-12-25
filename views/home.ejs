@@ -6,329 +6,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
     <title>Thegardenofeat'n.com | Home</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--
+        HEAD TEMPLATE
+    -->
 
-    <link rel="stylesheet" href="/CSS/home.css">
-    <link rel="stylesheet" href="/CSS/homeMediaQuery.css">
+    <%- include("./Header&Footer/headTemplate.ejs") %>
+
+    <!--
+        CUSTOM CSS LINKS
+    -->
+
+    <link rel="stylesheet" href="/CSS/Header&Footer/header.home.css">
+    <link rel="stylesheet" href="/CSS/Header&Footer/footer.css">
+    <link rel="stylesheet" href="/CSS/HomePage/home.mobile.css">
+    <link rel="stylesheet" href="/CSS/HomePage/home.pc.css">
+
+    <!--
+        - preload images
+    -->
+
+    <%- include("./MetaTags/preloadImages.home.ejs") %>
+
 </head>
 
 <body>
 
-    <header>
-        <div class="hamburger-icon">
-            <div>
-                <p></p>
-                <p></p>
-                <p></p>
-            </div>
-        </div>
+    <!--
+        - PRELOAD
+    -->
+    <div class="preload" data-preload>
+        <div class="circle"></div>
+        <p class="text">TheGardenOfEat'n</p>
+    </div>
 
-        <div id="name">
-            <h3><a href="/">the <span> garden </span> of eat'n</a></h3>
-        </div>
+    <!--
+        HEADER
+    -->
 
-        <div class="search">
-            <label id="searchbar-wrapper" for="searchbar">
-                <input type="text" id="searchbar" name="search" placeholder="Hungry! Order Now" autocomplete="off">
+    <%- include("./Header&Footer/header.home.ejs")  %>
 
-                <div>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-            </label>
+    <!--
+        BODY
+    -->
 
-            <div class="search-dropdown display-none">
-                <div class="search-dropdown-content">
-
-                    <% for (let eachCategory of menu) {%>
-                        <a class="category-name-indropdown" href="#<%= eachCategory.content.url %>">
-                            <%=eachCategory.category%>
-                        </a>
-
-                        <% for (let item of eachCategory.content.items) { %>
-
-                            <a class="display-none" href="#<%= eachCategory.content.url %>">
-                                <%=item%>
-                            </a>
-
-                            <%}%>
-                                <%}%>
-
-                                    <p class="no-item-found-msg display-none">
-                                        <img src="/BackgroundImages/sad-emoji.png">
-                                        Item Not Found!
-                                    </p>
-
-                </div>
-            </div>
-        </div>
-
-    </header>
-
-
-    <section id="bottom-section">
-
-        <section id="left">
-
-            <section class="sidebarLinks">
-
-                <p><i class="fa-solid fa-hand-point-up"></i>click to see menu</p>
-
-                <ul>
-                    <li><a href="/home"><i class="fa-solid fa-house"></i>home</a></li>
-
-                    <li><a href="/about-us"><i class="fa-solid fa-chalkboard-user"></i>about us</a></li>
-
-                    <li><a href="/book-table"><i class="fa-solid fa-utensils"></i>book a table</a></li>
-
-                    <li><a href="/join-us"><i class="fa-solid fa-handshake-simple"></i>join us</a></li>
-
-                    <li><a href="/contact-us"><i class="fa-solid fa-phone"></i>contact us</a></li>
-
-                    <li><a href=""><i class="fa-solid fa-utensils"></i>our services</a></li>
-
-                    <li class="profile"><a href="/profile"><i class="fa-solid fa-user"></i>edit profile</a></li>
-
-                    <li><a href=""><i class="fa-solid fa-cart-shopping"></i>go to cart</a></li>
-
-                    <li><a href=""><i class="fa-solid fa-calendar"></i>your orders</a></li>
-
-                    <li><a href=""><i class="fa-solid fa-hat-cowboy"></i>membership</a></li>
-
-                    <li><a href=""><i class="fa-solid fa-gear"></i>settings</a></li>
-
-                    <li class="logout">
-                        <form action="/logout" method="post">
-                            <button><i class="fa-solid fa-right-from-bracket"></i>logout</button>
-                        </form>
-                    </li>
-
-                    <div class="copyright">
-                        <p>
-                            Copyright &#169; <span id="copyright-year"></span>
-                        </p>
-                        <p>
-                            the garden of eat'n
-                        </p>
-                    </div>
-                </ul>
-
-            </section>
-
-            <section class="menu-section menu-display-none">
-
-                <h2>our menu <i class="fa-solid fa-mug-saucer"></i></h2>
-                <% for (let eachCategory of menu) {%>
-                    <div>
-                        <div>
-                            <h3>
-                                <a href="#<%= eachCategory.content.url %>">
-                                    <%= eachCategory.category %>
-                                </a>
-                            </h3>
-
-                            <% for (let item of eachCategory.content.items) { %>
-                                <div>
-                                    <i class="fa-solid fa-stop"></i>
-                                    <a href="#<%= eachCategory.content.url %>">
-                                        <%= item%>
-                                    </a>
-                                </div>
-                                <%}%>
-                        </div>
-                    </div>
-                    <%}%>
-            </section>
-
-        </section>
-
-
-        <section id="right">
-
-            <div class="advertisement">
-                <h3>eat what makes you happy</h3>
-
-                <div class="container">
-                    <div class="items-wrapper">
-                        <button id="prev-slide" class="slide-button">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </button>
-
-                        <div class="items-list">
-
-                            <div class="items">
-                                <img class="items-img" src="BackgroundImages/biryani1.png" alt="">
-                                <p>biryani</p>
-                            </div>
-                            <div class="items">
-                                <img class="items-img" src="BackgroundImages/noodles1.png" alt="">
-                                <p>chinese</p>
-                            </div>
-                            <div class="items">
-                                <img class="items-img" src="BackgroundImages/kadhai-paneer.png" alt="">
-                                <p>paneer</p>
-                            </div>
-                            <div class="items cake">
-                                <img class="items-img" src="BackgroundImages/cake.png" alt="">
-                                <p>cake</p>
-                            </div>
-                            <div class="items">
-                                <img class="items-img" src="BackgroundImages/chicken-legs.png" alt="">
-                                <p>chicken</p>
-                            </div>
-                            <div class="items">
-                                <img class="items-img" src="BackgroundImages/samosa1.png" alt="">
-                                <p>samosa</p>
-                            </div>
-                            <div class="items">
-                                <img class="items-img" src="BackgroundImages/spring-roll1.png" alt="">
-                                <p>spring roll</p>
-                            </div>
-                            <div class="items pancake">
-                                <img class="items-img" src="BackgroundImages/pancake.png" alt="">
-                                <p>pancake</p>
-                            </div>
-                            <div class="items muffin">
-                                <img class="items-img" src="BackgroundImages/chocolate-muffin.png" alt="">
-                                <p>muffin</p>
-                            </div>
-
-                        </div>
-
-                        
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="food-container">
-
-                <% for (let eachCategory of menu) {%>
-                    <div id="<%= eachCategory.content.url %>">
-                        <h3 class="category-name">
-                            <i class="fa-solid fa-chevron-right"></i>
-                            <%= eachCategory.category %>
-                        </h3>
-
-                        <div class="food-wrapper">
-                            <% for (let item of eachCategory.content.items) { %>
-
-                                <div>
-                                    <figure class="item-img-container">
-                                        <img src="BackgroundImages/coffee.png" alt="">
-                                    </figure>
-
-                                    <p class="name">
-                                        <%= item %>
-                                    </p>
-                                    <p class="price"><i class="fa-solid fa-indian-rupee-sign"></i>20.000</p>
-
-                                    <button>Add to cart</button>
-                                </div>
-
-                                <%}%>
-                        </div>
-                    </div>
-                    <%}%>
-            </div>
-
-        </section>
-
-
-    </section>
-
-
-
-
-
-    <!-- <section id="cart-items" class="">
-        <div class="your-cart">
-            <div class="left">
-                <div>
-                    <h2>Your Cart</h2>
-                    <p><span class="itemcountcart">0</span> Items</p>
-                </div>
-                <div id="insidecartitems">
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-
-                </div>
-                <div>
-                    <a href="home.html"><img src="../icons/thin-long-arrow-left-icon.png" alt="">Back To Shop</a>
-                </div>
-            </div>
-
-            <div class="right">
-                <div>
-                    <h2>Order Summary</h2>
-                </div>
-                <div>
-                    <p>ITEMS <span class="itemcountsummary">0</span></p>
-                    <p>&#8377 <span class="total">____</span></p>
-                </div>
-                <div>
-                    <div>
-                        <label for="address">SHIPPING TO</label>
-                    </div>
-                    <div><select name="myAddress" id="address">
-                            <option value="" selected>Address1</option>
-                            <option value="">Address2</option>
-                            <option value="">Add New Address</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="promocode">PROMO CODE</label>
-                    </div>
-                    <div><input type="text" id="promocode" name="myPromocode" placeholder="PROMOCODE"></div>
-                </div>
-                <div>
-                    <p>DISCOUNT</p>
-                    <p>&#8377 <span class="discountgot">____</span></p>
-                </div>
-                <div>
-                    <p>TOTAL</p>
-                    <p>&#8377 <span class="grandtotal">____</span></p>
-                </div>
-                <div>
-                    <button id="order">Place Order</button>
-                </div>
-
-            </div>
-        </div>
-        </div>
-    </section>
-
-    <button id="cart" class="">
-        CART
-        <p>2</p>
-    </button> -->
+    <%- include("./HomePage/home.body.ejs") %>
 
 </body>
+
+<script src="/JS/header.home.js" defer></script>
 <script src="/JS/home.js" defer></script>
 
 </html>

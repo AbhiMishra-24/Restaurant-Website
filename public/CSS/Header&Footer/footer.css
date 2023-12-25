@@ -1,0 +1,28 @@
+/*-----------------------------------*\
+    # FOOTER 
+\*-----------------------------------*/
+
+
+footer {
+    position: relative;
+    top: 6rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+footer a {
+    text-decoration: underline;
+    width: max-content;
+}
+
+footer span {
+    color: white;
+    font-size: 14px;
+}

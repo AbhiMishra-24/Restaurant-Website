@@ -1,0 +1,124 @@
+<!--
+    MENU SECTION
+-->
+
+<section class="menu hide" data-menu>
+
+    <button class="show-menu" data-show-menu>
+        <i class="fa-solid fa-utensils"></i>menu
+    </button>
+
+    <button class="close-menu hide" data-close-menu>
+        <i class="fa-solid fa-xmark"></i>close
+    </button>
+
+    <div class="menu-wrapper hide" data-menu-wrapper>
+        <div>
+
+            <% for (let eachCategory of menu) { %>
+
+                <div class="menu-category-wrapper">
+
+                    <a href="#<%= eachCategory.content.url %>" class="category-head">
+                        <%= eachCategory.category %>
+                    </a>
+
+                    <% for (let item of eachCategory.content.items) { %>
+
+                        <div class="category-items">
+                            <i class="fa-solid fa-stop"></i>
+                            <a href="#<%= eachCategory.content.url %>">
+                                <%= item %>
+                            </a>
+                        </div>
+
+                        <%}%>
+                </div>
+                <%}%>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+<section class="carousel-food-container">
+
+    <!--
+        CAROUSEL
+    -->
+
+    <section class="carousel">
+        <h3>eat what makes you happy</h3>
+
+        <div class="carousel-wrapper" data-carousel>
+
+            <button data-prev-slide id="prev" class="slide-button prev">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <button data-next-slide id="next" class="slide-button next">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div class="items-list">
+
+                <% for (let item of carouselList) { %>
+
+                    <div class="<%=item.class%>">
+                        <img class="items-img" src="/BackgroundImages/<%=item.src%>" alt="">
+                        <p>
+                            <%=item.name%>
+                        </p>
+                    </div>
+
+                    <% } %>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--
+        OUR MENU
+    -->
+
+    <section class="food-container">
+
+        <h2>our menu</h2>
+
+        <% for (let eachCategory of menu) {%>
+            <div id="<%= eachCategory.content.url %>">
+                <h3 class="category-name">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <%= eachCategory.category %>
+                </h3>
+
+                <div class="food-wrapper">
+                    <% for (let item of eachCategory.content.items) { %>
+
+                        <div>
+                            <figure class="item-img-container">
+                                <img src="BackgroundImages/coffee.png" alt="">
+                            </figure>
+
+                            <p class="name">
+                                <%= item %>
+                            </p>
+                            <p class="price"><i class="fa-solid fa-indian-rupee-sign"></i>20.000</p>
+
+                            <button>Add to cart</button>
+                        </div>
+
+                        <%}%>
+                </div>
+            </div>
+            <%}%>
+
+    </section>
+
+    <%- include('./../Header&Footer/footer.ejs') %>
+
+</section>

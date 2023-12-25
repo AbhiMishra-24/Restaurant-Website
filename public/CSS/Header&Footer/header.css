@@ -1,0 +1,249 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;500;600;700;800;900&family=Agbalumo&family=Berkshire+Swash&family=Montserrat:wght@100;400;500;600;700;800;900&family=Roboto:wght@400;500&display=swap');
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+    /* COLORS */
+
+    --cherry-red: #750E21;
+    --light-gold: #FFECD6;
+    --white: #fff;
+    --black: #000;
+
+    --rest-name: #fff;
+    --carousel-heading-text: #750E21;
+    --carousel-heading-text: #fff;
+    --food-container-text: #750E21;
+    --food-container-text: #fff;
+    --food-items-name: #000;
+    --food-items-price: #000;
+
+    --body-bg: #FFECD6;
+    --header-bg: #000;
+    --search-icon-bg: #222;
+    --search-dropdown-bg: #000;
+    --search-menu-bg: #111;
+    --navbar-bg: #000;
+    --signup-bg: #fff;
+    --menu-wrapper-bg: #000;
+    --menu-category-wrapper-bg: #181818;
+    --carousel-heading-bg: transparent;
+    --carousel-items-bg: #000;
+    --food-container-heading-bg: transparent;
+    --food-items-bg: #B0A695;
+    /* --food-items-bg: #000; */
+    --food-items-bg: #eee;
+
+    --menu-btn: #750E21;
+    --slider-btn: #750E21;
+    --cart-btn: #750E21;
+
+    /* FONT FAMILY */
+
+    --logo-font: 'Merienda', cursive;
+    --body-font: 'Montserrat', sans-serif;
+    --rest-name-font: 'Merienda', cursive;
+    --heading-font: 'Merienda', cursive;
+}
+
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+body {
+    font-family: var(--body-font);
+}
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+
+header {
+    /* border: 1px solid black; */
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4.5rem;
+    display: grid;
+    grid-template-columns: 35% auto;
+    padding-inline: 1rem;
+}
+
+
+/*
+    HEADER LOGO
+*/
+
+
+header a.logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    position: relative;
+    gap: 5px;
+}
+
+header a.logo>p {
+    font-family: var(--rest-name-font);
+    color: var(--rest-name);
+    font-weight: 900;
+    font-size: calc(16px + 1vw);
+    text-shadow: 0 0 5px 0 black;
+}
+
+header a.logo>p>span {
+    font-family: var(--rest-name-font);
+    background: linear-gradient(90deg, yellow, rgb(11, 226, 11), yellow, rgb(11, 226, 11));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+
+/*
+    NAVBAR
+*/
+
+
+header nav {
+    width: 100%;
+    height: 100%;
+}
+
+header nav ul {
+    /* border: 1px solid green; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 0.5rem;
+}
+
+header nav li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+header nav a {
+    color: white;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+header nav a:hover,
+header nav a:focus {
+    background-color: #222;
+}
+
+header nav a>i {
+    font-size: 10px;
+}
+
+header li.header-dropdown {
+    position: relative;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+header nav li.header-dropdown figure{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+    cursor: pointer;
+}
+
+header nav li.header-dropdown figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+header .header-dropdown-content {
+    position: absolute;
+    top: 4rem;
+    right: -0.5rem;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    padding: 12px 15px;
+    gap: 12px;
+    border-radius: 15px;
+    transform: translateX(0);
+    transition: 0.2s transform ease;
+}
+
+header .header-dropdown-content.hide {
+    transform: translateX(17rem);
+}
+
+header .header-dropdown-content a {
+    padding-inline: 20px;
+    padding-block: 10px;
+    background-color: #111;
+    justify-content: left;
+}
+
+header .header-dropdown-content form {
+    width: 100%;
+}
+
+header .header-dropdown-content button {
+    width: 100%;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+header .header-dropdown-content button i {
+    font-size: 12px;
+}

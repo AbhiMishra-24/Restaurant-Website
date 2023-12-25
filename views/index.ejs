@@ -23,7 +23,7 @@
         - preload images
     -->
 
-    <%- include("./preloadImages.home.ejs") %>
+    <!-- <%- include("./preloadImages.home.ejs") %> -->
 
 </head>
 
@@ -43,126 +43,130 @@
     <%- include("./header.home.ejs") %>
 
 
-    <!--
+        <!--
         MENU SECTION
     -->
 
-    <section class="menu" data-menu>
+        <section class="menu" data-menu>
 
-        <button class="show-menu" data-show-menu>
-            <i class="fa-solid fa-utensils"></i>menu
-        </button>
+            <button class="show-menu" data-show-menu>
+                <i class="fa-solid fa-utensils"></i>menu
+            </button>
 
-        <button class="close-menu hide" data-close-menu>
-            <i class="fa-solid fa-xmark"></i>close
-        </button>
+            <button class="close-menu hide" data-close-menu>
+                <i class="fa-solid fa-xmark"></i>close
+            </button>
 
-        <div class="menu-wrapper hide" data-menu-wrapper>
-            <% for (let eachCategory of menu) { %>
+            <div class="menu-wrapper hide" data-menu-wrapper>
+                <div>
 
-                <div class="menu-category-wrapper">
+                    <% for (let eachCategory of menu) { %>
 
-                    <a href="#<%= eachCategory.content.url %>" class="category-head">
-                        <%= eachCategory.category %>
-                    </a>
+                        <div class="menu-category-wrapper">
 
-                    <% for (let item of eachCategory.content.items) { %>
-
-                        <div class="category-items">
-                            <i class="fa-solid fa-stop"></i>
-                            <a href="#<%= eachCategory.content.url %>">
-                                <%= item %>
+                            <a href="#<%= eachCategory.content.url %>" class="category-head">
+                                <%= eachCategory.category %>
                             </a>
+
+                            <% for (let item of eachCategory.content.items) { %>
+
+                                <div class="category-items">
+                                    <i class="fa-solid fa-stop"></i>
+                                    <a href="#<%= eachCategory.content.url %>">
+                                        <%= item %>
+                                    </a>
+                                </div>
+
+                                <%}%>
                         </div>
-
                         <%}%>
+
                 </div>
-                <%}%>
-        </div>
+            </div>
 
-    </section>
+        </section>
 
 
-    <!--
+        <!--
         CAROUSEL
     -->
 
-    <section class="carousel">
-        <h3>eat what makes you happy</h3>
+        <section class="carousel">
+            <h3>eat what makes you happy</h3>
 
-        <div class="carousel-wrapper" data-carousel>
+            <div class="carousel-wrapper" data-carousel>
 
-            <button data-prev-slide id="prev" class="slide-button prev">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
+                <button data-prev-slide id="prev" class="slide-button prev">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
 
-            <button data-next-slide id="next" class="slide-button next">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
+                <button data-next-slide id="next" class="slide-button next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
 
-            <div class="items-list">
+                <div class="items-list">
 
-                <% for (let item of carouselList) { %>
+                    <% for (let item of carouselList) { %>
 
-                    <div class="<%=item.class%>">
-                        <img class="items-img" src="/BackgroundImages/<%=item.src%>" alt="">
-                        <p>
-                            <%=item.name%>
-                        </p>
-                    </div>
+                        <div class="<%=item.class%>">
+                            <img class="items-img" src="/BackgroundImages/<%=item.src%>" alt="">
+                            <p>
+                                <%=item.name%>
+                            </p>
+                        </div>
 
-                    <% } %>
+                        <% } %>
+
+                </div>
 
             </div>
-
-        </div>
-    </section>
+        </section>
 
 
-    <!--
+        <!--
         OUR MENU
     -->
 
-    <section class="food-container">
+        <section class="food-container">
 
-        <h2>our menu</h2>
+            <h2>our menu</h2>
 
-        <% for (let eachCategory of menu) {%>
-            <div id="<%= eachCategory.content.url %>">
-                <h3 class="category-name">
-                    <i class="fa-solid fa-chevron-right"></i>
-                    <%= eachCategory.category %>
-                </h3>
+            <% for (let eachCategory of menu) {%>
+                <div id="<%= eachCategory.content.url %>">
+                    <h3 class="category-name">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <%= eachCategory.category %>
+                    </h3>
 
-                <div class="food-wrapper">
-                    <% for (let item of eachCategory.content.items) { %>
+                    <div class="food-wrapper">
+                        <% for (let item of eachCategory.content.items) { %>
 
-                        <div>
-                            <figure class="item-img-container">
-                                <img src="BackgroundImages/coffee.png" alt="">
-                            </figure>
+                            <div>
+                                <figure class="item-img-container">
+                                    <img src="BackgroundImages/coffee.png" alt="">
+                                </figure>
 
-                            <p class="name">
-                                <%= item %>
-                            </p>
-                            <p class="price"><i class="fa-solid fa-indian-rupee-sign"></i>20.000</p>
+                                <p class="name">
+                                    <%= item %>
+                                </p>
+                                <p class="price"><i class="fa-solid fa-indian-rupee-sign"></i>20.000</p>
 
-                            <button>Add to cart</button>
-                        </div>
+                                <button>Add to cart</button>
+                            </div>
 
-                        <%}%>
+                            <%}%>
+                    </div>
                 </div>
-            </div>
-            <%}%>
+                <%}%>
 
-    </section>
+        </section>
 
 
-    <!--
+        <!--
         FOOTER
     -->
 
-    <%- include("./footer.ejs") %>
+        <%- include("./footer.ejs") %>
 
 
 </body>
